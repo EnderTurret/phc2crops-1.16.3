@@ -10,7 +10,7 @@ public class FeatureConfigs {
 	
 	public static final BlockClusterFeatureConfig ARID_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
 			(new SimpleBlockStateProvider(BlockRegistry.aridgarden.getDefaultState()), 
-					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).func_227317_b_().build();
+					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).preventProjection().build();
 	
 	public static final BlockClusterFeatureConfig FROST_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
 			(new SimpleBlockStateProvider(BlockRegistry.frostgarden.getDefaultState()), 
