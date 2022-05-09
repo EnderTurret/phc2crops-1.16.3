@@ -18,7 +18,7 @@ public class TallGrassLootHandler {
 					.name("sf_grass_drops").build());
 
 
-		
+
 
 	}
 

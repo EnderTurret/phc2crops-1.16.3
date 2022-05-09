@@ -95,14 +95,14 @@ public class BlockRegistry {
 	public static Block pamwhitemushroomcrop;
 	public static Block pamwintersquashcrop;
 	public static Block pamzucchinicrop;
-	
+
 	public static Block aridgarden;
 	public static Block frostgarden;
 	public static Block tropicalgarden;
 	public static Block windygarden;
 	public static Block shadedgarden;
 	public static Block soggygarden;
-	
+
 	public static void registerAll(RegistryEvent.Register<Block> event) {
 		if (!event.getName().equals(ForgeRegistries.BLOCKS.getRegistryName()))
 			return;
@@ -263,7 +263,7 @@ public class BlockRegistry {
 					.doesNotBlockMovement().tickRandomly().hardnessAndResistance(0).sound(SoundType.CROP), "wintersquash"));
 			pamzucchinicrop = register("pamzucchinicrop", new BlockPamCrop(Block.Properties.create(Material.PLANTS)
 					.doesNotBlockMovement().tickRandomly().hardnessAndResistance(0).sound(SoundType.CROP), "zucchini"));
-			
+
 			aridgarden = register("aridgarden", new BlockPamAridGarden(Block.Properties.create(Material.PLANTS)
 					.doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT), "aridgarden"));
 			frostgarden = register("frostgarden", new BlockPamGarden(Block.Properties.create(Material.PLANTS)
@@ -276,18 +276,18 @@ public class BlockRegistry {
 					.doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT), "shadedgarden"));
 			soggygarden = register("soggygarden", new BlockPamGarden(Block.Properties.create(Material.PLANTS)
 					.doesNotBlockMovement().hardnessAndResistance(0).sound(SoundType.PLANT), "soggygarden"));
-			
-			
-			
+
+
+
 	}
-	
-	
+
+
 
 	private static <T extends Block> T register(String name, T block) {
 		BlockItem item = new BlockItem(block, new Item.Properties().group(Pamhc2crops.ITEM_GROUP));
 		return register(name, block, item);
 	}
-	
+
 
 	private static <T extends Block> T register(String name, T block, @Nullable BlockItem item) {
 		ResourceLocation id = Pamhc2crops.getId(name);
@@ -295,6 +295,6 @@ public class BlockRegistry {
 		ForgeRegistries.BLOCKS.register(block);
 		return block;
 	}
-	
+
 
 }

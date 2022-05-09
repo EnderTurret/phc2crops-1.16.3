@@ -66,7 +66,7 @@ public class CropHarvest {
 						for (int i = 0; i < drops.size(); i++) {
 							if (drops.stream().distinct().limit(3).count() <= 1 || crop == Blocks.POTATOES
 									|| crop == Blocks.CARROTS) {
-								
+
 								event.getWorld()
 										.addEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
 												event.getPos().getY(), event.getPos().getZ(),

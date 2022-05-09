@@ -11,17 +11,17 @@ import net.minecraft.world.IBlockReader;
 public class BlockPamAridGarden extends BushBlock{
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 	private String name;
-	
+
 	public BlockPamAridGarden(Block.Properties properties, String name) {
 		super(properties);
 		this.name = name;
-		
+
 	}
-	
+
 	@Override
 	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
 			return net.minecraftforge.common.PlantType.DESERT;
-		
+
 	}
 
 	@SuppressWarnings("deprecation")
@@ -34,8 +34,8 @@ public class BlockPamAridGarden extends BushBlock{
 	public Block.OffsetType getOffsetType() {
 		return Block.OffsetType.XZ;
 	}
-	
-	
-	
+
+
+
 
 }

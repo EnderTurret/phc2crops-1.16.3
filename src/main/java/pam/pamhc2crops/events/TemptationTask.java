@@ -92,8 +92,8 @@ public class TemptationTask {
 			ItemRegistry.wintersquashseeditem,
 			ItemRegistry.zucchiniseeditem
 			);
-		
-	
+
+
 	private static final Ingredient Grain = Ingredient.fromItems(
 			ItemRegistry.amaranthitem,
 			ItemRegistry.barleyitem,
@@ -107,7 +107,7 @@ public class TemptationTask {
 			ItemRegistry.riceitem,
 			ItemRegistry.ryeitem,
 			ItemRegistry.soybeanitem
-			
+
 			);
 
 	private static final Ingredient Pig = Ingredient.fromItems(
@@ -148,19 +148,19 @@ public class TemptationTask {
 			ItemRegistry.waterchestnutitem,
 			ItemRegistry.wintersquashitem,
 			ItemRegistry.zucchiniitem
-			
+
 			);
 
 	private static final Ingredient Rabbit = Ingredient.fromItems(
 			ItemRegistry.blackberryitem,
 			ItemRegistry.blueberryitem,
-			ItemRegistry.cactusfruititem, 
+			ItemRegistry.cactusfruititem,
 			ItemRegistry.candleberryitem,
-			ItemRegistry.cantaloupeitem, 
+			ItemRegistry.cantaloupeitem,
 			ItemRegistry.cranberryitem,
 			ItemRegistry.elderberryitem,
-			ItemRegistry.grapeitem, 
-			ItemRegistry.greengrapeitem, 
+			ItemRegistry.grapeitem,
+			ItemRegistry.greengrapeitem,
 			ItemRegistry.huckleberryitem,
 			ItemRegistry.juniperberryitem,
 			ItemRegistry.kiwiitem,
@@ -173,7 +173,7 @@ public class TemptationTask {
 			Items.SWEET_BERRIES
 
 			);
-	
+
 	@SubscribeEvent
 	public void onEntitySpawn(EntityJoinWorldEvent event) {
 		Entity entity = event.getEntity();

@@ -7,30 +7,30 @@ import pam.pamhc2crops.config.ClusterConfig;
 import pam.pamhc2crops.init.BlockRegistry;
 
 public class FeatureConfigs {
-	
+
 	public static final BlockClusterFeatureConfig ARID_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
-			(new SimpleBlockStateProvider(BlockRegistry.aridgarden.getDefaultState()), 
+			(new SimpleBlockStateProvider(BlockRegistry.aridgarden.getDefaultState()),
 					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).preventProjection().build();
-	
+
 	public static final BlockClusterFeatureConfig FROST_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
-			(new SimpleBlockStateProvider(BlockRegistry.frostgarden.getDefaultState()), 
+			(new SimpleBlockStateProvider(BlockRegistry.frostgarden.getDefaultState()),
 					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).build();
-	
+
 	public static final BlockClusterFeatureConfig TROPICAL_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
-			(new SimpleBlockStateProvider(BlockRegistry.tropicalgarden.getDefaultState()), 
+			(new SimpleBlockStateProvider(BlockRegistry.tropicalgarden.getDefaultState()),
 					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).build();
-	
+
 	public static final BlockClusterFeatureConfig WINDY_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
-			(new SimpleBlockStateProvider(BlockRegistry.windygarden.getDefaultState()), 
+			(new SimpleBlockStateProvider(BlockRegistry.windygarden.getDefaultState()),
 					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).build();
-	
+
 	public static final BlockClusterFeatureConfig SHADED_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
-			(new SimpleBlockStateProvider(BlockRegistry.shadedgarden.getDefaultState()), 
+			(new SimpleBlockStateProvider(BlockRegistry.shadedgarden.getDefaultState()),
 					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).build();
-	
+
 	public static final BlockClusterFeatureConfig SOGGY_GARDEN_CONFIG = (new BlockClusterFeatureConfig.Builder
-			(new SimpleBlockStateProvider(BlockRegistry.soggygarden.getDefaultState()), 
+			(new SimpleBlockStateProvider(BlockRegistry.soggygarden.getDefaultState()),
 					new SimpleBlockPlacer())).tries(ClusterConfig.garden_cluster_amount.get()).build();
-	
+
 
 }

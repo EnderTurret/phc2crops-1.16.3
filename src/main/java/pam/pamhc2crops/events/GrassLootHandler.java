@@ -16,10 +16,10 @@ public class GrassLootHandler {
 			event.getTable().addPool(LootPool.builder()
 					.addEntry(TableLootEntry.builder(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/grass_drops")))
 					.name("sf_grass_drops").build());
-		
 
 
-		
+
+
 
 	}
 

@@ -13,17 +13,17 @@ public class BlockPamGarden extends BushBlock{
 	protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 	@SuppressWarnings("unused")
 	private String name;
-	
+
 	public BlockPamGarden(Block.Properties properties, String name) {
 		super(properties);
 		this.name = name;
-		
+
 	}
-	
+
 	@Override
 	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
 			return net.minecraftforge.common.PlantType.PLAINS;
-		
+
 	}
 
 	@SuppressWarnings("deprecation")
@@ -36,7 +36,7 @@ public class BlockPamGarden extends BushBlock{
 	public Block.OffsetType getOffsetType() {
 		return Block.OffsetType.XZ;
 	}
-	
+
 	@Override
 	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
 	      return true;

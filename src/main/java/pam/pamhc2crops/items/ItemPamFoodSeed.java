@@ -11,7 +11,7 @@ public class ItemPamFoodSeed extends BlockNamedItem {
 		super(blockIn, properties);
 
 	}
-	
+
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
 	      if (this.isInGroup(group)) {
@@ -19,5 +19,5 @@ public class ItemPamFoodSeed extends BlockNamedItem {
 	      }
 
 	   }
-	
+
 }

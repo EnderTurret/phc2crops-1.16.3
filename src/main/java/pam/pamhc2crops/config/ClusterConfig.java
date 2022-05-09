@@ -4,7 +4,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ClusterConfig {
 	public static ForgeConfigSpec.IntValue garden_cluster_amount;
-	
+
 	public static void init(ForgeConfigSpec.Builder config) {
 
 		garden_cluster_amount = config.comment(
@@ -12,7 +12,7 @@ public class ClusterConfig {
 				.defineInRange("Probability of gardens generating", 32, 1, 1000000000);
 
 
-		
+
 
 	}
 }

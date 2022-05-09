@@ -20,28 +20,28 @@ import pam.pamhc2crops.worldgen.GardenGeneration;
 
 public class SideProxy {
 	SideProxy() {
-		
+
 		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.CONFIG, "pamhc2crops.toml");
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::commonSetup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::enqueueIMC);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::processIMC);
 		FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, BlockRegistry::registerAll);
-		
+
 		FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, ItemRegistry::registerAll);
 		FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Placement.class, GardenGeneration::registerPlacements);
 
-		
+
 		Config.loadConfig(Config.CONFIG, FMLPaths.CONFIGDIR.get().resolve("pamhc2crops.toml").toString());
 
 		MinecraftForge.EVENT_BUS.addListener(SideProxy::serverStarting);
 	}
 
-	
+
 	private static void commonSetup(FMLCommonSetupEvent event) {
 		Pamhc2crops.LOGGER.debug("common setup");
 		EventSetup.setupEvents();
 		CompostRegistry.register();
-		
+
 	}
 
 	private static void enqueueIMC(final InterModEnqueueEvent event) {

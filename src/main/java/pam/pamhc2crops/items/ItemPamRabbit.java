@@ -25,7 +25,7 @@ public class ItemPamRabbit extends BlockNamedItem {
 	      }
 
 	   }
-	
+
 	@Override
 	public ActionResultType itemInteractionForEntity(ItemStack itemstack, PlayerEntity player,
 			LivingEntity entity, Hand hand) {

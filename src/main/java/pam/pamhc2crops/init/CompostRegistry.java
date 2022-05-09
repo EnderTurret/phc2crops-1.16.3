@@ -83,7 +83,7 @@ public class CompostRegistry {
 		ComposterBlock.CHANCES.put(ItemRegistry.whitemushroomitem, 0.65F);
 		ComposterBlock.CHANCES.put(ItemRegistry.wintersquashitem, 0.65F);
 		ComposterBlock.CHANCES.put(ItemRegistry.zucchiniitem, 0.65F);
-		
+
 		//Seeds
 		ComposterBlock.CHANCES.put(ItemRegistry.agaveseeditem, 0.3F);
 		ComposterBlock.CHANCES.put(ItemRegistry.amaranthseeditem, 0.3F);
@@ -162,9 +162,9 @@ public class CompostRegistry {
 		ComposterBlock.CHANCES.put(ItemRegistry.whitemushroomseeditem, 0.3F);
 		ComposterBlock.CHANCES.put(ItemRegistry.wintersquashseeditem, 0.3F);
 		ComposterBlock.CHANCES.put(ItemRegistry.zucchiniseeditem, 0.3F);
-	
 
-		
+
+
 
 	}
 

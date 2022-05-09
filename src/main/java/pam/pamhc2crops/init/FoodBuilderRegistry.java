@@ -3,7 +3,7 @@ package pam.pamhc2crops.init;
 import net.minecraft.item.Food;
 
 public class FoodBuilderRegistry {
-		
+
 	//Vegetables
 	public static final Food ARTICHOKEITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
 	public static final Food ASPARAGUSITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
@@ -25,7 +25,7 @@ public class FoodBuilderRegistry {
 	public static final Food TOMATOITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
 	public static final Food WINTERSQUASHITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
 	public static final Food ZUCCHINIITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
-	
+
 	//Root Vegetables
 	public static final Food ARROWROOTITEM = (new Food.Builder()).hunger(1).saturation(0.3F).build();
 	public static final Food CASSAVAITEM = (new Food.Builder()).hunger(1).saturation(0.3F).build();
@@ -44,7 +44,7 @@ public class FoodBuilderRegistry {
 	public static final Food TAROITEM = (new Food.Builder()).hunger(1).saturation(0.3F).build();
 	public static final Food TURNIPITEM = (new Food.Builder()).hunger(1).saturation(0.3F).build();
 	public static final Food WATERCHESTNUTITEM = (new Food.Builder()).hunger(1).saturation(0.3F).build();
-			
+
 	//Fruits
 	public static final Food BLACKBERRYITEM = (new Food.Builder()).hunger(2).saturation(0.1F).build();
 	public static final Food BLUEBERRYITEM = (new Food.Builder()).hunger(2).saturation(0.1F).build();
@@ -62,7 +62,7 @@ public class FoodBuilderRegistry {
 	public static final Food PINEAPPLEITEM = (new Food.Builder()).hunger(2).saturation(0.3F).build();
 	public static final Food RASPBERRYITEM = (new Food.Builder()).hunger(2).saturation(0.1F).build();
 	public static final Food STRAWBERRYITEM = (new Food.Builder()).hunger(2).saturation(0.1F).build();
-			
+
 	//Misc
 	public static final Food WHITEMUSHROOMITEM = (new Food.Builder()).hunger(1).saturation(0.3F).build();
 	public static final Food SPICELEAF  = (new Food.Builder()).hunger(1).saturation(0.1F).build();
@@ -85,11 +85,11 @@ public class FoodBuilderRegistry {
 	public static final Food BAKEDTAROITEM = (new Food.Builder()).hunger(5).saturation(0.6F).build();
 	public static final Food BAKEDTURNIPITEM = (new Food.Builder()).hunger(5).saturation(0.6F).build();
 	public static final Food BAKEDWATERCHESTNUTITEM = (new Food.Builder()).hunger(5).saturation(0.6F).build();
-	
+
 	//Becomes Vegetable-level when cooked
 	public static final Food ROASTEDMUSHROOMITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
 	public static final Food HOTTEAITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
 	public static final Food HOTCOFFEEITEM = (new Food.Builder()).hunger(3).saturation(0.6F).build();
-	
+
 
 }

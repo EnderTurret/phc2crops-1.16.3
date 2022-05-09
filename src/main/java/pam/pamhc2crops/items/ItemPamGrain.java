@@ -18,7 +18,7 @@ public class ItemPamGrain extends BlockNamedItem {
 		super(blockIn, properties);
 
 	}
-	
+
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
 	      if (this.isInGroup(group)) {

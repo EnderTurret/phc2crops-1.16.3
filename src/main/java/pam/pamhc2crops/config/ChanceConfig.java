@@ -4,7 +4,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ChanceConfig {
 	public static ForgeConfigSpec.IntValue garden_chance;
-	
+
 	public static void init(ForgeConfigSpec.Builder config) {
 
 		garden_chance = config.comment(
@@ -12,7 +12,7 @@ public class ChanceConfig {
 				.defineInRange("Probability of gardens generating", 2, 1, 1000000000);
 
 
-		
+
 
 	}
 }

@@ -83,7 +83,7 @@ public class ModRenderers {
 		RenderTypeLookup.setRenderLayer(BlockRegistry.pamwhitemushroomcrop, RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockRegistry.pamwintersquashcrop, RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockRegistry.pamzucchinicrop, RenderType.getCutout());
-		
+
 		RenderTypeLookup.setRenderLayer(BlockRegistry.aridgarden, RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockRegistry.frostgarden, RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockRegistry.tropicalgarden, RenderType.getCutout());
