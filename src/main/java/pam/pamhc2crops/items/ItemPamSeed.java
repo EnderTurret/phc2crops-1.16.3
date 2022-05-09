@@ -34,7 +34,7 @@ public class ItemPamSeed extends BlockNamedItem {
 
 		ItemStack stack = player.getHeldItem(hand);
 
-		if (!entity.world.isRemote && !entity.isChild() && entity instanceof AgeableEntity && (int) ((AgeableEntity) entity).getGrowingAge() == 0) {
+		if (!entity.world.isRemote && !entity.isChild() && entity instanceof AgeableEntity && ((AgeableEntity) entity).getGrowingAge() == 0) {
 			if (entity instanceof ChickenEntity) {
 				if (((ChickenEntity) entity).isInLove()) {
 					return ActionResultType.FAIL;
@@ -61,7 +61,7 @@ public class ItemPamSeed extends BlockNamedItem {
 		if (entity.isChild()) {
 			if (!player.isCreative())
 				stack.shrink(1);
-			((AgeableEntity) entity).ageUp((int) ((float) (-((AgeableEntity) entity).getGrowingAge() / 20) * 0.1F),
+			((AgeableEntity) entity).ageUp((int) (-((AgeableEntity) entity).getGrowingAge() / 20 * 0.1F),
 					true);
 			return ActionResultType.PASS;
 		}
