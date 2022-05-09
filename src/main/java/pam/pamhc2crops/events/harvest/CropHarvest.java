@@ -59,18 +59,18 @@ public class CropHarvest {
 						for (int i = 0; i < drops.size(); i++) {
 							if (drops.get(i).getItem() != getCropSeed(crop))
 								event.getWorld()
-										.addEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
-												event.getPos().getY(), event.getPos().getZ(),
-												drops.get(i)));
+								.addEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
+										event.getPos().getY(), event.getPos().getZ(),
+										drops.get(i)));
 						}
 						for (int i = 0; i < drops.size(); i++) {
 							if (drops.stream().distinct().limit(3).count() <= 1 || crop == Blocks.POTATOES
 									|| crop == Blocks.CARROTS) {
 
 								event.getWorld()
-										.addEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
-												event.getPos().getY(), event.getPos().getZ(),
-												drops.get(i)));
+								.addEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
+										event.getPos().getY(), event.getPos().getZ(),
+										drops.get(i)));
 								drops.remove(0);
 							}
 
@@ -99,9 +99,9 @@ public class CropHarvest {
 									event.getWorld().getTileEntity(event.getPos()));
 							for (int i = 0; i < drops.size(); i++) {
 								event.getWorld()
-										.addEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
-												event.getPos().getY(), event.getPos().getZ(),
-												drops.get(i)));
+								.addEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
+										event.getPos().getY(), event.getPos().getZ(),
+										drops.get(i)));
 							}
 							event.getPlayer().addExhaustion(.05F);
 							event.getWorld().playSound((PlayerEntity) null, event.getPos(),

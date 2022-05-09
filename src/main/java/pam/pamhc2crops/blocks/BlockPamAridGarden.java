@@ -20,7 +20,7 @@ public class BlockPamAridGarden extends BushBlock{
 
 	@Override
 	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
-			return net.minecraftforge.common.PlantType.DESERT;
+		return net.minecraftforge.common.PlantType.DESERT;
 
 	}
 

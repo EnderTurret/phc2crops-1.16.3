@@ -91,5 +91,5 @@ public class ModRenderers {
 		RenderTypeLookup.setRenderLayer(BlockRegistry.shadedgarden, RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockRegistry.soggygarden, RenderType.getCutout());
 
-}
+	}
 }

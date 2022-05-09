@@ -21,11 +21,11 @@ public class ItemPamGrain extends BlockNamedItem {
 
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-	      if (this.isInGroup(group)) {
-	         items.add(new ItemStack(this));
-	      }
+		if (this.isInGroup(group)) {
+			items.add(new ItemStack(this));
+		}
 
-	   }
+	}
 
 	@Override
 	public ActionResultType itemInteractionForEntity(ItemStack itemstack, PlayerEntity player,

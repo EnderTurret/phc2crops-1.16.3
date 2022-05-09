@@ -22,7 +22,7 @@ public class BlockPamGarden extends BushBlock{
 
 	@Override
 	public net.minecraftforge.common.PlantType getPlantType(IBlockReader world, BlockPos pos) {
-			return net.minecraftforge.common.PlantType.PLAINS;
+		return net.minecraftforge.common.PlantType.PLAINS;
 
 	}
 
@@ -39,6 +39,6 @@ public class BlockPamGarden extends BushBlock{
 
 	@Override
 	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
-	      return true;
-	   }
+		return true;
+	}
 }

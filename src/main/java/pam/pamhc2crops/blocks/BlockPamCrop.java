@@ -37,8 +37,8 @@ public class BlockPamCrop extends CropsBlock {
 
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-	      items.add(new ItemStack(this));
-	   }
+		items.add(new ItemStack(this));
+	}
 
 
 }

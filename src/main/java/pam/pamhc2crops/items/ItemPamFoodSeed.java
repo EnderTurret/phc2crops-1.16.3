@@ -14,10 +14,10 @@ public class ItemPamFoodSeed extends BlockNamedItem {
 
 	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-	      if (this.isInGroup(group)) {
-	         items.add(new ItemStack(this));
-	      }
+		if (this.isInGroup(group)) {
+			items.add(new ItemStack(this));
+		}
 
-	   }
+	}
 
 }
