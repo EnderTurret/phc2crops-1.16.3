@@ -1,5 +1,8 @@
 package pam.pamhc2crops.events.harvest;
 
+import java.lang.reflect.Method;
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropsBlock;
@@ -12,16 +15,13 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+
 import pam.pamhc2crops.Pamhc2crops;
 import pam.pamhc2crops.config.RightClickConfig;
-
-import java.lang.reflect.Method;
-import java.util.List;
 
 public class CropHarvest {
 

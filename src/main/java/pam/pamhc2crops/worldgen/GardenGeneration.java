@@ -5,6 +5,7 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
+
 import pam.pamhc2crops.config.EnableConfig;
 
 public final class GardenGeneration {

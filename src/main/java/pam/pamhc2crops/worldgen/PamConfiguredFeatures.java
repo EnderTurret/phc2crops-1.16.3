@@ -6,8 +6,8 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.Features;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+
 import pam.pamhc2crops.Pamhc2crops;
-import pam.pamhc2crops.config.ChanceConfig;
 import pam.pamhc2crops.worldgen.configs.FeatureConfigs;
 
 public final class PamConfiguredFeatures {

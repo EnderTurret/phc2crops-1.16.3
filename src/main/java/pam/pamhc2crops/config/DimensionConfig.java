@@ -1,12 +1,14 @@
 package pam.pamhc2crops.config;
 
-import com.google.common.base.Predicate;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.ForgeConfigSpec;
-
-import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.annotation.Nullable;
+
+import com.google.common.base.Predicate;
+
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ForgeConfigSpec;
 
 public class DimensionConfig {
 	public static ForgeConfigSpec.ConfigValue<List<? extends String>> whitelist;

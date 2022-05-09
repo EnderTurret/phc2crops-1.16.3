@@ -1,16 +1,5 @@
 package pam.pamhc2crops.init;
 
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.MutableRegistry;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.WorldGenRegistries;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.Features;
-import pam.pamhc2crops.Pamhc2crops;
-import pam.pamhc2crops.config.ChanceConfig;
-import pam.pamhc2crops.worldgen.configs.FeatureConfigs;
-
 public class FeatureRegistry {
 
 	/*public static ConfiguredFeature<?, ?> ARID_GARDEN = newConfiguredFeature("arid_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.ARID_GARDEN_CONFIG)

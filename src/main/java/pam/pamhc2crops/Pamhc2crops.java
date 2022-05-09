@@ -1,5 +1,10 @@
 package pam.pamhc2crops;
 
+import javax.annotation.Nonnull;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -7,13 +12,10 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import pam.pamhc2crops.init.ItemRegistry;
 import pam.pamhc2crops.worldgen.GardenGeneration;
 import pam.pamhc2crops.worldgen.PamConfiguredFeatures;
-
-import javax.annotation.Nonnull;
 
 @Mod("pamhc2crops")
 public class Pamhc2crops {

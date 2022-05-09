@@ -3,6 +3,7 @@ package pam.pamhc2crops.worldgen.configs;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+
 import pam.pamhc2crops.config.ClusterConfig;
 import pam.pamhc2crops.init.BlockRegistry;
 
