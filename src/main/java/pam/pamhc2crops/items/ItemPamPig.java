@@ -18,6 +18,7 @@ public class ItemPamPig extends BlockNamedItem {
 
 	}
 
+	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
 	      if (this.isInGroup(group)) {
 	         items.add(new ItemStack(this));
@@ -25,6 +26,7 @@ public class ItemPamPig extends BlockNamedItem {
 
 	   }
 	
+	@Override
 	public ActionResultType itemInteractionForEntity(ItemStack itemstack, PlayerEntity player,
 			LivingEntity entity, Hand hand) {
 

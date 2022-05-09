@@ -20,6 +20,7 @@ public class Pamhc2crops {
 	public static final String MOD_ID = "pamhc2crops";
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final ItemGroup ITEM_GROUP = new ItemGroup("pamhc2crops") {
+		@Override
 		public ItemStack createIcon() {
 			return new ItemStack(ItemRegistry.barleyitem);
 		}

@@ -19,6 +19,7 @@ public class ItemPamSeed extends BlockNamedItem {
 		super(blockIn, properties);
 	}
 	
+	@Override
 	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
 	      if (this.isInGroup(group)) {
 	         items.add(new ItemStack(this));
@@ -27,6 +28,7 @@ public class ItemPamSeed extends BlockNamedItem {
 	   }
 	
 
+	@Override
 	public ActionResultType itemInteractionForEntity(ItemStack itemstack, PlayerEntity player,
 			LivingEntity entity, Hand hand) {
 

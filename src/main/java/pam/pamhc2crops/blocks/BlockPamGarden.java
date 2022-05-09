@@ -26,10 +26,13 @@ public class BlockPamGarden extends BushBlock{
 		
 	}
 
+	@SuppressWarnings("deprecation")
+	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		return SHAPE;
 	}
 
+	@Override
 	public Block.OffsetType getOffsetType() {
 		return Block.OffsetType.XZ;
 	}
