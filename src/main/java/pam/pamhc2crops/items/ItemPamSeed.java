@@ -13,6 +13,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
 
+import net.minecraft.item.Item.Properties;
+
 public class ItemPamSeed extends BlockNamedItem {
 
 	public ItemPamSeed(Block blockIn, Properties properties) {
@@ -20,8 +22,8 @@ public class ItemPamSeed extends BlockNamedItem {
 	}
 
 	@Override
-	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-		if (this.isInGroup(group)) {
+	public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {
+		if (this.allowdedIn(group)) {
 			items.add(new ItemStack(this));
 		}
 
@@ -29,12 +31,12 @@ public class ItemPamSeed extends BlockNamedItem {
 
 
 	@Override
-	public ActionResultType itemInteractionForEntity(ItemStack itemstack, PlayerEntity player,
+	public ActionResultType interactLivingEntity(ItemStack itemstack, PlayerEntity player,
 			LivingEntity entity, Hand hand) {
 
-		ItemStack stack = player.getHeldItem(hand);
+		ItemStack stack = player.getItemInHand(hand);
 
-		if (!entity.world.isRemote && !entity.isChild() && entity instanceof AgeableEntity && ((AgeableEntity) entity).getGrowingAge() == 0) {
+		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgeableEntity && ((AgeableEntity) entity).getAge() == 0) {
 			if (entity instanceof ChickenEntity) {
 				if (((ChickenEntity) entity).isInLove()) {
 					return ActionResultType.FAIL;
@@ -47,10 +49,10 @@ public class ItemPamSeed extends BlockNamedItem {
 			}
 
 			if (entity instanceof ParrotEntity)
-				if (!entity.world.isRemote) {
-					if (!((ParrotEntity) entity).isTamed())
+				if (!entity.level.isClientSide) {
+					if (!((ParrotEntity) entity).isTame())
 						if (Math.random() <= 0.33) {
-							((ParrotEntity) entity).setTamedBy(player);
+							((ParrotEntity) entity).tame(player);
 							((ParrotEntity) entity).setInLove(player);
 						}
 					if (!player.isCreative())
@@ -58,10 +60,10 @@ public class ItemPamSeed extends BlockNamedItem {
 				}
 		}
 
-		if (entity.isChild()) {
+		if (entity.isBaby()) {
 			if (!player.isCreative())
 				stack.shrink(1);
-			((AgeableEntity) entity).ageUp((int) (-((AgeableEntity) entity).getGrowingAge() / 20 * 0.1F),
+			((AgeableEntity) entity).ageUp((int) (-((AgeableEntity) entity).getAge() / 20 * 0.1F),
 					true);
 			return ActionResultType.PASS;
 		}

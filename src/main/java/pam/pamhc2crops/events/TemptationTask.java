@@ -16,7 +16,7 @@ import pam.pamhc2crops.init.ItemRegistry;
 
 public class TemptationTask {
 
-	private static final Ingredient Chicken = Ingredient.fromItems(
+	private static final Ingredient Chicken = Ingredient.of(
 			ItemRegistry.agaveseeditem,
 			ItemRegistry.amaranthseeditem,
 			ItemRegistry.arrowrootseeditem,
@@ -99,7 +99,7 @@ public class TemptationTask {
 			);
 
 
-	private static final Ingredient Grain = Ingredient.fromItems(
+	private static final Ingredient Grain = Ingredient.of(
 			ItemRegistry.amaranthitem,
 			ItemRegistry.barleyitem,
 			ItemRegistry.beanitem,
@@ -115,7 +115,7 @@ public class TemptationTask {
 
 			);
 
-	private static final Ingredient Pig = Ingredient.fromItems(
+	private static final Ingredient Pig = Ingredient.of(
 			ItemRegistry.arrowrootitem,
 			ItemRegistry.artichokeitem,
 			ItemRegistry.asparagusitem,
@@ -156,7 +156,7 @@ public class TemptationTask {
 
 			);
 
-	private static final Ingredient Rabbit = Ingredient.fromItems(
+	private static final Ingredient Rabbit = Ingredient.of(
 			ItemRegistry.blackberryitem,
 			ItemRegistry.blueberryitem,
 			ItemRegistry.cactusfruititem,

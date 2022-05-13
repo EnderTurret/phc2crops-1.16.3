@@ -68,26 +68,26 @@ public final class GardenGeneration {
 	}
 
 	private static void addAridGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.ARID_GARDEN);
+		biome.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.ARID_GARDEN);
 	}
 
 	private static void addFrostGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.FROST_GARDEN);
+		biome.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.FROST_GARDEN);
 	}
 
 	private static void addShadedGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.SHADED_GARDEN);
+		biome.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.SHADED_GARDEN);
 	}
 
 	private static void addSoggyGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.SOGGY_GARDEN);
+		biome.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.SOGGY_GARDEN);
 	}
 
 	private static void addTropicalGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.TROPICAL_GARDEN);
+		biome.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.TROPICAL_GARDEN);
 	}
 
 	private static void addWindyGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.WINDY_GARDEN);
+		biome.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.WINDY_GARDEN);
 	}
 }

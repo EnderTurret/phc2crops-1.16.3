@@ -16,27 +16,27 @@ import net.minecraft.world.IBlockReader;
 public class BlockPamCrop extends CropsBlock {
 	@SuppressWarnings("unused")
 	private String name;
-	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_7;
+	public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
 
 	public BlockPamCrop(Block.Properties builder, String name) {
 		super(builder);
 		this.name = name;
-		this.setDefaultState(this.stateContainer.getBaseState().with(this.getAgeProperty(), Integer.valueOf(0)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
 	}
 
 	@Override
-	protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+	protected boolean mayPlaceOn(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		return state.getBlock() instanceof FarmlandBlock;
 	}
 
 	@Override
-	protected IItemProvider getSeedsItem() {
+	protected IItemProvider getBaseSeedId() {
 		return this.asItem();
 	}
 
 
 	@Override
-	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
+	public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {
 		items.add(new ItemStack(this));
 	}
 

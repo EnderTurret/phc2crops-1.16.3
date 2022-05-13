@@ -14,8 +14,8 @@ public class GrassLootHandler {
 	@SubscribeEvent
 	public void lootTableLoad(LootTableLoadEvent event) {
 		if (event.getName().equals(grass_drops))
-			event.getTable().addPool(LootPool.builder()
-					.addEntry(TableLootEntry.builder(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/grass_drops")))
+			event.getTable().addPool(LootPool.lootPool()
+					.add(TableLootEntry.lootTableReference(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/grass_drops")))
 					.name("sf_grass_drops").build());
 
 

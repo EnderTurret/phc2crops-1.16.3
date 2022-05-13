@@ -12,6 +12,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
 
+import net.minecraft.item.Item.Properties;
+
 public class ItemPamPig extends BlockNamedItem {
 	public ItemPamPig(Block blockIn, Properties properties) {
 		super(blockIn, properties);
@@ -19,20 +21,20 @@ public class ItemPamPig extends BlockNamedItem {
 	}
 
 	@Override
-	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
-		if (this.isInGroup(group)) {
+	public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {
+		if (this.allowdedIn(group)) {
 			items.add(new ItemStack(this));
 		}
 
 	}
 
 	@Override
-	public ActionResultType itemInteractionForEntity(ItemStack itemstack, PlayerEntity player,
+	public ActionResultType interactLivingEntity(ItemStack itemstack, PlayerEntity player,
 			LivingEntity entity, Hand hand) {
 
-		ItemStack stack = player.getHeldItem(hand);
+		ItemStack stack = player.getItemInHand(hand);
 
-		if (!entity.world.isRemote && !entity.isChild() && entity instanceof AgeableEntity && ((AgeableEntity) entity).getGrowingAge() == 0) {
+		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgeableEntity && ((AgeableEntity) entity).getAge() == 0) {
 			if (entity instanceof PigEntity) {
 				if (((PigEntity) entity).isInLove()) {
 					return ActionResultType.FAIL;
@@ -47,10 +49,10 @@ public class ItemPamPig extends BlockNamedItem {
 
 		}
 
-		if (entity.isChild()) {
+		if (entity.isBaby()) {
 			if (!player.isCreative())
 				stack.shrink(1);
-			((AgeableEntity) entity).ageUp((int) (-((AgeableEntity) entity).getGrowingAge() / 20 * 0.1F),
+			((AgeableEntity) entity).ageUp((int) (-((AgeableEntity) entity).getAge() / 20 * 0.1F),
 					true);
 			return ActionResultType.PASS;
 		}

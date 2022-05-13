@@ -23,7 +23,7 @@ public class Pamhc2crops {
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final ItemGroup ITEM_GROUP = new ItemGroup("pamhc2crops") {
 		@Override
-		public ItemStack createIcon() {
+		public ItemStack makeIcon() {
 			return new ItemStack(ItemRegistry.barleyitem);
 		}
 

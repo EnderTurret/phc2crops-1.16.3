@@ -3,22 +3,22 @@ package pam.pamhc2crops.init;
 public class FeatureRegistry {
 
 	/*public static ConfiguredFeature<?, ?> ARID_GARDEN = newConfiguredFeature("arid_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.ARID_GARDEN_CONFIG)
-    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).func_242729_a(ChanceConfig.garden_chance.get()));
+    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).chance(ChanceConfig.garden_chance.get()));
 
 	public static ConfiguredFeature<?, ?> FROST_GARDEN = newConfiguredFeature("frost_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.FROST_GARDEN_CONFIG)
-    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).func_242729_a(ChanceConfig.garden_chance.get()));
+    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).chance(ChanceConfig.garden_chance.get()));
 
 	public static ConfiguredFeature<?, ?> SHADED_GARDEN = newConfiguredFeature("shaded_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.SHADED_GARDEN_CONFIG)
-    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).func_242729_a(ChanceConfig.garden_chance.get()));
+    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).chance(ChanceConfig.garden_chance.get()));
 
 	public static ConfiguredFeature<?, ?> SOGGY_GARDEN = newConfiguredFeature("soggy_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.SOGGY_GARDEN_CONFIG)
-    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).func_242729_a(ChanceConfig.garden_chance.get()));
+    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).chance(ChanceConfig.garden_chance.get()));
 
 	public static ConfiguredFeature<?, ?> TROPICAL_GARDEN = newConfiguredFeature("tropical_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.TROPICAL_GARDEN_CONFIG)
-    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).func_242729_a(ChanceConfig.garden_chance.get()));
+    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).chance(ChanceConfig.garden_chance.get()));
 
 	public static ConfiguredFeature<?, ?> WINDY_GARDEN = newConfiguredFeature("windy_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.WINDY_GARDEN_CONFIG)
-    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).func_242729_a(ChanceConfig.garden_chance.get()));
+    		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).chance(ChanceConfig.garden_chance.get()));
 
 	public static ConfiguredFeature<?, ?> newConfiguredFeature(String registryName, ConfiguredFeature<?, ?> configuredFeature) {
         Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(Pamhc2crops.MOD_ID, registryName), configuredFeature);
