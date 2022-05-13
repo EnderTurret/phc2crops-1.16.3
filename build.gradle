@@ -21,11 +21,6 @@ group = "com.pam.pamhc2crops"
 archivesBaseName = "pamhc2crops-${version_minecraft}"
 
 
-repositories {
-    maven { name = "Progwml6 maven"; url = "https://dvs1.progwml6.com/files/maven/" } // JEI files
-    maven { name = "ModMaven"; url = "modmaven.k-4u.nl" } // JEI files, fallback
-}
-
 minecraft {
     mappings channel: 'snapshot', version: "${version_fml_mappings}"
     //accessTransformer = file('build/resources/main/META-INF/accesstransformer.cfg')
