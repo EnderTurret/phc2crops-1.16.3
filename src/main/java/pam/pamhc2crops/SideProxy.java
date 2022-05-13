@@ -1,8 +1,8 @@
 package pam.pamhc2crops;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.levelgen.placement.FeatureDecorator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
@@ -33,7 +33,7 @@ public class SideProxy {
 		FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, BlockRegistry::registerAll);
 
 		FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, ItemRegistry::registerAll);
-		FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Placement.class, GardenGeneration::registerPlacements);
+		FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(FeatureDecorator.class, GardenGeneration::registerPlacements);
 
 
 		Config.loadConfig(Config.CONFIG, FMLPaths.CONFIGDIR.get().resolve("pamhc2crops.toml").toString());

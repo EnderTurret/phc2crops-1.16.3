@@ -5,9 +5,9 @@ import javax.annotation.Nonnull;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +21,7 @@ import pam.pamhc2crops.worldgen.PamConfiguredFeatures;
 public class Pamhc2crops {
 	public static final String MOD_ID = "pamhc2crops";
 	public static final Logger LOGGER = LogManager.getLogger();
-	public static final ItemGroup ITEM_GROUP = new ItemGroup("pamhc2crops") {
+	public static final CreativeModeTab ITEM_GROUP = new CreativeModeTab("pamhc2crops") {
 		@Override
 		public ItemStack makeIcon() {
 			return new ItemStack(ItemRegistry.barleyitem);

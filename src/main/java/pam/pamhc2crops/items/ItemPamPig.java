@@ -1,27 +1,27 @@
 package pam.pamhc2crops.items;
 
-import net.minecraft.block.Block;
-import net.minecraft.entity.AgeableEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.passive.PigEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockNamedItem;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.NonNullList;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.entity.AgableMob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.NonNullList;
 
-import net.minecraft.item.Item.Properties;
+import net.minecraft.world.item.Item.Properties;
 
-public class ItemPamPig extends BlockNamedItem {
+public class ItemPamPig extends ItemNameBlockItem {
 	public ItemPamPig(Block blockIn, Properties properties) {
 		super(blockIn, properties);
 
 	}
 
 	@Override
-	public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {
+	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
 		if (this.allowdedIn(group)) {
 			items.add(new ItemStack(this));
 		}
@@ -29,20 +29,20 @@ public class ItemPamPig extends BlockNamedItem {
 	}
 
 	@Override
-	public ActionResultType interactLivingEntity(ItemStack itemstack, PlayerEntity player,
-			LivingEntity entity, Hand hand) {
+	public InteractionResult interactLivingEntity(ItemStack itemstack, Player player,
+			LivingEntity entity, InteractionHand hand) {
 
 		ItemStack stack = player.getItemInHand(hand);
 
-		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgeableEntity && ((AgeableEntity) entity).getAge() == 0) {
-			if (entity instanceof PigEntity) {
-				if (((PigEntity) entity).isInLove()) {
-					return ActionResultType.FAIL;
+		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgableMob && ((AgableMob) entity).getAge() == 0) {
+			if (entity instanceof Pig) {
+				if (((Pig) entity).isInLove()) {
+					return InteractionResult.FAIL;
 				} else {
-					((PigEntity) entity).setInLove(player);
+					((Pig) entity).setInLove(player);
 					if (!player.isCreative())
 						stack.shrink(1);
-					return ActionResultType.PASS;
+					return InteractionResult.PASS;
 				}
 
 			}
@@ -52,12 +52,12 @@ public class ItemPamPig extends BlockNamedItem {
 		if (entity.isBaby()) {
 			if (!player.isCreative())
 				stack.shrink(1);
-			((AgeableEntity) entity).ageUp((int) (-((AgeableEntity) entity).getAge() / 20 * 0.1F),
+			((AgableMob) entity).ageUp((int) (-((AgableMob) entity).getAge() / 20 * 0.1F),
 					true);
-			return ActionResultType.PASS;
+			return InteractionResult.PASS;
 		}
 
-		return ActionResultType.FAIL;
+		return InteractionResult.FAIL;
 
 	}
 

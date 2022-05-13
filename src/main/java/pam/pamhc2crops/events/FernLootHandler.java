@@ -1,8 +1,8 @@
 package pam.pamhc2crops.events;
 
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.TableLootEntry;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootTableReference;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -15,7 +15,7 @@ public class FernLootHandler {
 	public void lootTableLoad(LootTableLoadEvent event) {
 		if (event.getName().equals(fern_drops))
 			event.getTable().addPool(LootPool.lootPool()
-					.add(TableLootEntry.lootTableReference(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/fern_drops")))
+					.add(LootTableReference.lootTableReference(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/fern_drops")))
 					.name("sf_grass_drops").build());
 	}
 
