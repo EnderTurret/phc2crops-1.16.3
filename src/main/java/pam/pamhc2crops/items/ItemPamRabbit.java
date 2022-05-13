@@ -1,7 +1,7 @@
 package pam.pamhc2crops.items;
 
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.entity.AgableMob;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +17,6 @@ import net.minecraft.world.item.Item.Properties;
 public class ItemPamRabbit extends ItemNameBlockItem {
 	public ItemPamRabbit(Block blockIn, Properties properties) {
 		super(blockIn, properties);
-
 	}
 
 	@Override
@@ -25,7 +24,6 @@ public class ItemPamRabbit extends ItemNameBlockItem {
 		if (this.allowdedIn(group)) {
 			items.add(new ItemStack(this));
 		}
-
 	}
 
 	@Override
@@ -34,7 +32,7 @@ public class ItemPamRabbit extends ItemNameBlockItem {
 
 		ItemStack stack = player.getItemInHand(hand);
 
-		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgableMob && ((AgableMob) entity).getAge() == 0) {
+		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgeableMob && ((AgeableMob) entity).getAge() == 0) {
 			if (entity instanceof Rabbit) {
 				if (((Rabbit) entity).isInLove()) {
 					return InteractionResult.FAIL;
@@ -52,7 +50,7 @@ public class ItemPamRabbit extends ItemNameBlockItem {
 		if (entity.isBaby()) {
 			if (!player.isCreative())
 				stack.shrink(1);
-			((AgableMob) entity).ageUp((int) (-((AgableMob) entity).getAge() / 20 * 0.1F),
+			((AgeableMob) entity).ageUp((int) (-((AgeableMob) entity).getAge() / 20 * 0.1F),
 					true);
 			return InteractionResult.PASS;
 		}

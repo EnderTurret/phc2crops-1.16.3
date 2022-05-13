@@ -2,7 +2,6 @@ package pam.pamhc2crops.worldgen;
 
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.FeatureDecorator;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
@@ -12,12 +11,7 @@ public final class GardenGeneration {
 
 	private GardenGeneration() {}
 
-	public static void registerPlacements(RegistryEvent.Register<FeatureDecorator<?>> event) {
-	}
-
-
 	public static void addFeaturesToBiomes(BiomeLoadingEvent biome) {
-
 		if (biome.getCategory() == Biome.BiomeCategory.DESERT || biome.getCategory() == Biome.BiomeCategory.MESA) {
 			if (EnableConfig.enable_aridgarden.get())
 			{
@@ -30,7 +24,6 @@ public final class GardenGeneration {
 			{
 				addFrostGarden(biome);
 			}
-
 		}
 
 		if (biome.getCategory() == Biome.BiomeCategory.FOREST) {
@@ -38,7 +31,6 @@ public final class GardenGeneration {
 			{
 				addShadedGarden(biome);
 			}
-
 		}
 
 		if (biome.getCategory() == Biome.BiomeCategory.SWAMP || biome.getCategory() == Biome.BiomeCategory.RIVER) {
@@ -46,7 +38,6 @@ public final class GardenGeneration {
 			{
 				addSoggyGarden(biome);
 			}
-
 		}
 
 		if (biome.getCategory() == Biome.BiomeCategory.BEACH || biome.getCategory() == Biome.BiomeCategory.OCEAN) {
@@ -54,7 +45,6 @@ public final class GardenGeneration {
 			{
 				addTropicalGarden(biome);
 			}
-
 		}
 
 		if (biome.getCategory() == Biome.BiomeCategory.PLAINS || biome.getCategory() == Biome.BiomeCategory.SAVANNA) {
@@ -62,9 +52,7 @@ public final class GardenGeneration {
 			{
 				addWindyGarden(biome);
 			}
-
 		}
-
 	}
 
 	private static void addAridGarden(BiomeLoadingEvent biome) {

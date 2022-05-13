@@ -14,13 +14,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 
 public class BlockPamCrop extends CropBlock {
-	@SuppressWarnings("unused")
-	private String name;
+
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
 
 	public BlockPamCrop(Block.Properties builder, String name) {
 		super(builder);
-		this.name = name;
 		this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
 	}
 
@@ -34,11 +32,8 @@ public class BlockPamCrop extends CropBlock {
 		return this.asItem();
 	}
 
-
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
 		items.add(new ItemStack(this));
 	}
-
-
 }

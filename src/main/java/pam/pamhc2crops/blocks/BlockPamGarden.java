@@ -7,23 +7,20 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.PlantType;
 import net.minecraft.world.level.BlockGetter;
 
-public class BlockPamGarden extends BushBlock{
+public class BlockPamGarden extends BushBlock {
+
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
-	@SuppressWarnings("unused")
-	private String name;
 
 	public BlockPamGarden(Block.Properties properties, String name) {
 		super(properties);
-		this.name = name;
-
 	}
 
 	@Override
-	public net.minecraftforge.common.PlantType getPlantType(BlockGetter world, BlockPos pos) {
-		return net.minecraftforge.common.PlantType.PLAINS;
-
+	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
+		return PlantType.PLAINS;
 	}
 
 	@SuppressWarnings("deprecation")

@@ -19,14 +19,15 @@ import pam.pamhc2crops.worldgen.PamConfiguredFeatures;
 
 @Mod("pamhc2crops")
 public class Pamhc2crops {
+
 	public static final String MOD_ID = "pamhc2crops";
 	public static final Logger LOGGER = LogManager.getLogger();
+
 	public static final CreativeModeTab ITEM_GROUP = new CreativeModeTab("pamhc2crops") {
 		@Override
 		public ItemStack makeIcon() {
 			return new ItemStack(ItemRegistry.barleyitem);
 		}
-
 	};
 
 	public Pamhc2crops() {
@@ -43,5 +44,4 @@ public class Pamhc2crops {
 	public static ResourceLocation getId(String path) {
 		return new ResourceLocation(MOD_ID, path);
 	}
-
 }

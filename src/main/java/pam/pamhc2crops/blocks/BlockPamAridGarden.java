@@ -6,36 +6,28 @@ import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.PlantType;
 import net.minecraft.world.level.BlockGetter;
 
-public class BlockPamAridGarden extends BushBlock{
-	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
-	private String name;
+public class BlockPamAridGarden extends BushBlock {
 
 	public BlockPamAridGarden(Block.Properties properties, String name) {
 		super(properties);
-		this.name = name;
-
 	}
 
 	@Override
-	public net.minecraftforge.common.PlantType getPlantType(BlockGetter world, BlockPos pos) {
-		return net.minecraftforge.common.PlantType.DESERT;
-
+	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
+		return PlantType.DESERT;
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-		return SHAPE;
+		return BlockPamGarden.SHAPE;
 	}
 
 	@Override
 	public Block.OffsetType getOffsetType() {
 		return Block.OffsetType.XZ;
 	}
-
-
-
-
 }
