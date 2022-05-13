@@ -8,11 +8,11 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
 public class Config {
+
 	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 	public static final ForgeConfigSpec CONFIG;
 
 	static {
-
 		BUILDER.push("Tweak Garden World Generation Rates");
 		ChanceConfig.init(BUILDER);
 		BUILDER.pop();

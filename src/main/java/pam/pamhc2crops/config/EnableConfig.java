@@ -3,6 +3,7 @@ package pam.pamhc2crops.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class EnableConfig {
+
 	public static ForgeConfigSpec.BooleanValue enable_aridgarden;
 	public static ForgeConfigSpec.BooleanValue enable_frostgarden;
 	public static ForgeConfigSpec.BooleanValue enable_tropicalgarden;
@@ -28,7 +29,5 @@ public class EnableConfig {
 
 		enable_soggygarden = config.comment("Should soggy gardens should generate in world").define("Generate soggy gardens",
 				true);
-
 	}
-
 }

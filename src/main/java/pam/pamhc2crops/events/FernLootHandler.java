@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import pam.pamhc2crops.Pamhc2crops;
 
 public class FernLootHandler {
+
 	private static ResourceLocation fern_drops = new ResourceLocation("minecraft", "blocks/fern");
 
 	@SubscribeEvent
@@ -18,5 +19,4 @@ public class FernLootHandler {
 					.add(LootTableReference.lootTableReference(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/fern_drops")))
 					.name("sf_grass_drops").build());
 	}
-
 }

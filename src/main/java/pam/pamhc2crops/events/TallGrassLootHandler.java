@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import pam.pamhc2crops.Pamhc2crops;
 
 public class TallGrassLootHandler {
+
 	private static ResourceLocation tall_grass_drops = new ResourceLocation("minecraft", "blocks/tall_grass");
 
 	@SubscribeEvent
@@ -17,10 +18,5 @@ public class TallGrassLootHandler {
 			event.getTable().addPool(LootPool.lootPool()
 					.add(LootTableReference.lootTableReference(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/tall_grass_drops")))
 					.name("sf_grass_drops").build());
-
-
-
-
 	}
-
 }

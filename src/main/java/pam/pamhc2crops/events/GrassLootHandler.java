@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import pam.pamhc2crops.Pamhc2crops;
 
 public class GrassLootHandler {
+
 	private static ResourceLocation grass_drops = new ResourceLocation("minecraft", "blocks/grass");
 
 	@SubscribeEvent
@@ -17,11 +18,5 @@ public class GrassLootHandler {
 			event.getTable().addPool(LootPool.lootPool()
 					.add(LootTableReference.lootTableReference(new ResourceLocation(Pamhc2crops.MOD_ID, "blocks/grass_drops")))
 					.name("sf_grass_drops").build());
-
-
-
-
-
 	}
-
 }

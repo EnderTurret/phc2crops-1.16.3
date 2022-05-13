@@ -34,9 +34,7 @@ public class CropHarvest {
 	private Item getCropSeed(Block block) {
 		try {
 			return (Item) seedDrops.invoke(block);
-		}
-
-		catch (Exception e) {
+		} catch (Exception e) {
 			Pamhc2crops.LOGGER.error("Where the heck is the seed", e.getLocalizedMessage());
 		}
 
@@ -111,9 +109,7 @@ public class CropHarvest {
 						}
 						event.getPlayer().swing(InteractionHand.MAIN_HAND);
 					}
-
 				}
 		}
 	}
-
 }

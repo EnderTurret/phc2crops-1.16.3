@@ -112,7 +112,6 @@ public class TemptationTask {
 			ItemRegistry.riceitem,
 			ItemRegistry.ryeitem,
 			ItemRegistry.soybeanitem
-
 			);
 
 	private static final Ingredient Pig = Ingredient.of(
@@ -153,7 +152,6 @@ public class TemptationTask {
 			ItemRegistry.waterchestnutitem,
 			ItemRegistry.wintersquashitem,
 			ItemRegistry.zucchiniitem
-
 			);
 
 	private static final Ingredient Rabbit = Ingredient.of(
@@ -176,36 +174,25 @@ public class TemptationTask {
 			ItemRegistry.spiceleafitem,
 			ItemRegistry.strawberryitem,
 			Items.SWEET_BERRIES
-
 			);
 
 	@SubscribeEvent
 	public void onEntitySpawn(EntityJoinWorldEvent event) {
 		Entity entity = event.getEntity();
 
-		if (entity instanceof Chicken) {
-			Chicken chicken = (Chicken) entity;
+		if (entity instanceof Chicken chicken)
 			chicken.goalSelector.addGoal(3, new MoreTemptation(chicken, 1.0D, false, Chicken));
-		}
 
-		if (entity instanceof Cow) {
-			Cow cow = (Cow) entity;
+		if (entity instanceof Cow cow)
 			cow.goalSelector.addGoal(3, new MoreTemptation(cow, 1.25D, false, Grain));
-		}
 
-		if (entity instanceof Sheep) {
-			Sheep sheep = (Sheep) entity;
+		if (entity instanceof Sheep sheep)
 			sheep.goalSelector.addGoal(3, new MoreTemptation(sheep, 1.0D, false, Grain));
-		}
 
-		if (entity instanceof Pig) {
-			Pig pig = (Pig) entity;
+		if (entity instanceof Pig pig)
 			pig.goalSelector.addGoal(4, new MoreTemptation(pig, 1.2D, false, Pig));
-		}
 
-		if (entity instanceof Rabbit) {
-			Rabbit rabbit = (Rabbit) entity;
+		if (entity instanceof Rabbit rabbit)
 			rabbit.goalSelector.addGoal(4, new MoreTemptation(rabbit, 1.2D, false, Rabbit));
-		}
 	}
 }

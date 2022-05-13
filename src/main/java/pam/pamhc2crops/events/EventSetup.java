@@ -15,17 +15,13 @@ public class EventSetup {
 				MinecraftForge.EVENT_BUS.register(new CropHarvest());
 		}
 
-		if (FeatureConfig.grass_drop_seeds.get()) {
+		if (FeatureConfig.grass_drop_seeds.get())
 			MinecraftForge.EVENT_BUS.register(new GrassLootHandler());
-		}
 
-		if (FeatureConfig.tallgrass_drop_seeds.get()) {
+		if (FeatureConfig.tallgrass_drop_seeds.get())
 			MinecraftForge.EVENT_BUS.register(new TallGrassLootHandler());
-		}
 
-		if (FeatureConfig.fern_drop_seeds.get()) {
+		if (FeatureConfig.fern_drop_seeds.get())
 			MinecraftForge.EVENT_BUS.register(new FernLootHandler());
-		}
-
 	}
 }
