@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.NetherWartBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -45,22 +46,24 @@ public class CropHarvest {
 	public void onCropHarvest(RightClickBlock event) {
 		if (event.getPlayer().getMainHandItem().getItem() != Items.BONE_MEAL) {
 			List<ItemStack> drops;
-			if (event.getWorld().getBlockState(event.getPos()).getBlock() instanceof CropBlock) {
+			BlockState state = event.getWorld().getBlockState(event.getPos());
+			if (state.getBlock() instanceof CropBlock crop) {
 				if (!event.getPlayer().getMainHandItem().isEmpty())
 					event.setCanceled(true); // prevents blocks from being placed
-				CropBlock crop = (CropBlock) event.getWorld().getBlockState(event.getPos()).getBlock();
-				if (crop.isMaxAge(event.getWorld().getBlockState(event.getPos()))) {
+
+				if (crop.isMaxAge(state)) {
 					if (!event.getWorld().isClientSide) {
-						drops = Block.getDrops(event.getWorld().getBlockState(event.getPos()),
+						drops = Block.getDrops(state,
 								(ServerLevel) event.getWorld(), event.getPos(),
 								event.getWorld().getBlockEntity(event.getPos()));
-						for (int i = 0; i < drops.size(); i++) {
-							if (drops.get(i).getItem() != getCropSeed(crop))
+
+						for (ItemStack stack : drops) {
+							if (stack.getItem() != getCropSeed(crop))
 								event.getWorld()
 								.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
-										event.getPos().getY(), event.getPos().getZ(),
-										drops.get(i)));
+										event.getPos().getY(), event.getPos().getZ(), stack));
 						}
+
 						for (int i = 0; i < drops.size(); i++) {
 							if (drops.stream().distinct().limit(3).count() <= 1 || crop == Blocks.POTATOES
 									|| crop == Blocks.CARROTS) {
@@ -73,36 +76,37 @@ public class CropHarvest {
 							}
 
 						}
+
 						event.getPlayer().causeFoodExhaustion(.05F);
-						event.getWorld().playSound((Player) null, event.getPos(), SoundEvents.CROP_BREAK,
+						event.getWorld().playSound(null, event.getPos(), SoundEvents.CROP_BREAK,
 								SoundSource.BLOCKS, 1.0F, 0.8F + event.getWorld().random.nextFloat() * 0.4F);
 						event.getWorld().setBlock(event.getPos(), crop.defaultBlockState(), 2);
-
 					}
+
 					event.getPlayer().swing(InteractionHand.MAIN_HAND);
 				}
 			}
 
 			if (RightClickConfig.crop_right_click.get())
-				if (event.getWorld().getBlockState(event.getPos()).getBlock() instanceof NetherWartBlock) {
+				if (state.getBlock() instanceof NetherWartBlock nether) {
 					if (!event.getPlayer().getMainHandItem().isEmpty())
 						event.setCanceled(true);
-					NetherWartBlock nether = (NetherWartBlock) event.getWorld().getBlockState(event.getPos())
-							.getBlock();
 
-					if (event.getWorld().getBlockState(event.getPos()).getValue(NetherWartBlock.AGE) == 3) {
+					if (state.getValue(NetherWartBlock.AGE) == 3) {
 						if (!event.getWorld().isClientSide) {
-							drops = Block.getDrops(event.getWorld().getBlockState(event.getPos()),
+							drops = Block.getDrops(state,
 									(ServerLevel) event.getWorld(), event.getPos(),
 									event.getWorld().getBlockEntity(event.getPos()));
+
 							for (int i = 0; i < drops.size(); i++) {
 								event.getWorld()
 								.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
 										event.getPos().getY(), event.getPos().getZ(),
 										drops.get(i)));
 							}
+
 							event.getPlayer().causeFoodExhaustion(.05F);
-							event.getWorld().playSound((Player) null, event.getPos(),
+							event.getWorld().playSound(null, event.getPos(),
 									SoundEvents.NETHER_WART_BREAK, SoundSource.BLOCKS, 1.0F,
 									0.8F + event.getWorld().random.nextFloat() * 0.4F);
 							event.getWorld().setBlock(event.getPos(), nether.defaultBlockState(), 2);
