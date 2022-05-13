@@ -6,6 +6,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 import pam.pamhc2crops.config.EnableConfig;
+import pam.pamhc2crops.init.WorldGenRegistry;
 
 public final class GardenGeneration {
 
@@ -56,26 +57,26 @@ public final class GardenGeneration {
 	}
 
 	private static void addAridGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.ARID_GARDEN);
+		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenRegistry.ARID_GARDEN.placedFeatureHolder());
 	}
 
 	private static void addFrostGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.FROST_GARDEN);
+		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenRegistry.FROST_GARDEN.placedFeatureHolder());
 	}
 
 	private static void addShadedGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.SHADED_GARDEN);
+		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenRegistry.SHADED_GARDEN.placedFeatureHolder());
 	}
 
 	private static void addSoggyGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.SOGGY_GARDEN);
+		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenRegistry.SOGGY_GARDEN.placedFeatureHolder());
 	}
 
 	private static void addTropicalGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.TROPICAL_GARDEN);
+		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenRegistry.TROPICAL_GARDEN.placedFeatureHolder());
 	}
 
 	private static void addWindyGarden(BiomeLoadingEvent biome) {
-		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PamConfiguredFeatures.WINDY_GARDEN);
+		biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenRegistry.WINDY_GARDEN.placedFeatureHolder());
 	}
 }
