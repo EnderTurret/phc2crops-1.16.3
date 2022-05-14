@@ -204,223 +204,219 @@ public class ItemRegistry {
 	public static Item wintersquashseeditem;
 	public static Item zucchiniseeditem;
 
-
-
-
+	private static Item.Properties properties() {
+		return new Item.Properties().tab(Pamhc2crops.ITEM_GROUP);
+	}
 
 	public static void registerAll(RegistryEvent.Register<Item> event) {
 		if (!event.getName().equals(ForgeRegistries.ITEMS.getRegistryName()))
 			return;
 
 		//Garden Item Blocks
-		aridgarden = register("aridgarden",new BlockItem(BlockRegistry.aridgarden, new Item.Properties().tab(Pamhc2crops.ITEM_GROUP)));
-		frostgarden = register("frostgarden",new BlockItem(BlockRegistry.frostgarden, new Item.Properties().tab(Pamhc2crops.ITEM_GROUP)));
-		shadedgarden = register("shadedgarden",new BlockItem(BlockRegistry.shadedgarden, new Item.Properties().tab(Pamhc2crops.ITEM_GROUP)));
-		soggygarden = register("soggygarden",new BlockItem(BlockRegistry.soggygarden, new Item.Properties().tab(Pamhc2crops.ITEM_GROUP)));
-		tropicalgarden = register("tropicalgarden",new BlockItem(BlockRegistry.tropicalgarden, new Item.Properties().tab(Pamhc2crops.ITEM_GROUP)));
-		windygarden = register("windygarden",new BlockItem(BlockRegistry.windygarden, new Item.Properties().tab(Pamhc2crops.ITEM_GROUP)));
+		aridgarden = register("aridgarden",new BlockItem(BlockRegistry.aridgarden, properties()));
+		frostgarden = register("frostgarden",new BlockItem(BlockRegistry.frostgarden, properties()));
+		shadedgarden = register("shadedgarden",new BlockItem(BlockRegistry.shadedgarden, properties()));
+		soggygarden = register("soggygarden",new BlockItem(BlockRegistry.soggygarden, properties()));
+		tropicalgarden = register("tropicalgarden",new BlockItem(BlockRegistry.tropicalgarden, properties()));
+		windygarden = register("windygarden",new BlockItem(BlockRegistry.windygarden, properties()));
 
 		//Grains
-		amaranthitem = register("amaranthitem", new ItemPamGrain(BlockRegistry.pamamaranthcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		barleyitem = register("barleyitem", new ItemPamGrain(BlockRegistry.pambarleycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		beanitem = register("beanitem", new ItemPamGrain(BlockRegistry.pambeancrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		chickpeaitem = register("chickpeaitem", new ItemPamGrain(BlockRegistry.pamchickpeacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cornitem = register("cornitem", new ItemPamGrain(BlockRegistry.pamcorncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		lentilitem = register("lentilitem", new ItemPamGrain(BlockRegistry.pamlentilcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		milletitem = register("milletitem", new ItemPamGrain(BlockRegistry.pammilletcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		oatsitem = register("oatsitem", new ItemPamGrain(BlockRegistry.pamoatscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		quinoaitem = register("quinoaitem", new ItemPamGrain(BlockRegistry.pamquinoacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		riceitem = register("riceitem", new ItemPamGrain(BlockRegistry.pamricecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		ryeitem = register("ryeitem", new ItemPamGrain(BlockRegistry.pamryecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		soybeanitem = register("soybeanitem", new ItemPamGrain(BlockRegistry.pamsoybeancrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
+		amaranthitem = register("amaranthitem", new ItemPamGrain(BlockRegistry.pamamaranthcrop, properties()));
+		barleyitem = register("barleyitem", new ItemPamGrain(BlockRegistry.pambarleycrop, properties()));
+		beanitem = register("beanitem", new ItemPamGrain(BlockRegistry.pambeancrop, properties()));
+		chickpeaitem = register("chickpeaitem", new ItemPamGrain(BlockRegistry.pamchickpeacrop, properties()));
+		cornitem = register("cornitem", new ItemPamGrain(BlockRegistry.pamcorncrop, properties()));
+		lentilitem = register("lentilitem", new ItemPamGrain(BlockRegistry.pamlentilcrop, properties()));
+		milletitem = register("milletitem", new ItemPamGrain(BlockRegistry.pammilletcrop, properties()));
+		oatsitem = register("oatsitem", new ItemPamGrain(BlockRegistry.pamoatscrop, properties()));
+		quinoaitem = register("quinoaitem", new ItemPamGrain(BlockRegistry.pamquinoacrop, properties()));
+		riceitem = register("riceitem", new ItemPamGrain(BlockRegistry.pamricecrop, properties()));
+		ryeitem = register("ryeitem", new ItemPamGrain(BlockRegistry.pamryecrop, properties()));
+		soybeanitem = register("soybeanitem", new ItemPamGrain(BlockRegistry.pamsoybeancrop, properties()));
 
 		//Fiber
-		cottonitem = register("cottonitem", new ItemPamFoodSeed(BlockRegistry.pamcottoncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		flaxitem = register("flaxitem", new ItemPamFoodSeed(BlockRegistry.pamflaxcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		kenafitem = register("kenafitem", new ItemPamFoodSeed(BlockRegistry.pamkenafcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		juteitem = register("juteitem", new ItemPamFoodSeed(BlockRegistry.pamjutecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		sisalitem = register("sisalitem", new ItemPamFoodSeed(BlockRegistry.pamsisalcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
+		cottonitem = register("cottonitem", new ItemPamFoodSeed(BlockRegistry.pamcottoncrop, properties()));
+		flaxitem = register("flaxitem", new ItemPamFoodSeed(BlockRegistry.pamflaxcrop, properties()));
+		kenafitem = register("kenafitem", new ItemPamFoodSeed(BlockRegistry.pamkenafcrop, properties()));
+		juteitem = register("juteitem", new ItemPamFoodSeed(BlockRegistry.pamjutecrop, properties()));
+		sisalitem = register("sisalitem", new ItemPamFoodSeed(BlockRegistry.pamsisalcrop, properties()));
 
 		//Vegetables
-		artichokeitem = register("artichokeitem", new ItemPamPig(BlockRegistry.pamartichokecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ARTICHOKEITEM)));
-		asparagusitem = register("asparagusitem", new ItemPamPig(BlockRegistry.pamasparaguscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ASPARAGUSITEM)));
-		bellpepperitem = register("bellpepperitem", new ItemPamPig(BlockRegistry.pambellpeppercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BELLPEPPERITEM)));
-		broccoliitem = register("broccoliitem", new ItemPamPig(BlockRegistry.pambroccolicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BROCCOLIITEM)));
-		brusselsproutitem = register("brusselsproutitem", new ItemPamPig(BlockRegistry.pambrusselsproutcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BRUSSELSPROUTITEM)));
-		cabbageitem = register("cabbageitem", new ItemPamPig(BlockRegistry.pamcabbagecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CABBAGEITEM)));
-		caulifloweritem = register("caulifloweritem", new ItemPamPig(BlockRegistry.pamcauliflowercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CAULIFLOWERITEM)));
-		celeryitem = register("celeryitem", new ItemPamPig(BlockRegistry.pamcelerycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CELERYITEM)));
-		chilipepperitem = register("chilipepperitem", new ItemPamPig(BlockRegistry.pamchilipeppercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CHILIPEPPERITEM)));
-		cucumberitem = register("cucumberitem", new ItemPamPig(BlockRegistry.pamcucumbercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CUCUMBERITEM)));
-		eggplantitem = register("eggplantitem", new ItemPamPig(BlockRegistry.pameggplantcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.EGGPLANTITEM)));
-		kaleitem = register("kaleitem", new ItemPamPig(BlockRegistry.pamkalecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.KALEITEM)));
-		lettuceitem = register("lettuceitem", new ItemPamPig(BlockRegistry.pamlettucecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.LETTUCEITEM)));
-		okraitem = register("okraitem", new ItemPamPig(BlockRegistry.pamokracrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.OKRAITEM)));
-		peasitem = register("peasitem", new ItemPamPig(BlockRegistry.pampeascrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.PEASITEM)));
-		spinachitem	= register("spinachitem", new ItemPamPig(BlockRegistry.pamspinachcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.SPINACHITEM)));
-		tomatilloitem = register("tomatilloitem", new ItemPamPig(BlockRegistry.pamtomatillocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.TOMATILLOITEM)));
-		tomatoitem = register("tomatoitem", new ItemPamPig(BlockRegistry.pamtomatocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.TOMATOITEM)));
-		wintersquashitem = register("wintersquashitem", new ItemPamPig(BlockRegistry.pamwintersquashcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.WINTERSQUASHITEM)));
-		zucchiniitem = register("zucchiniitem", new ItemPamPig(BlockRegistry.pamzucchinicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ZUCCHINIITEM)));
+		artichokeitem = register("artichokeitem", new ItemPamPig(BlockRegistry.pamartichokecrop, properties().food(FoodBuilderRegistry.ARTICHOKEITEM)));
+		asparagusitem = register("asparagusitem", new ItemPamPig(BlockRegistry.pamasparaguscrop, properties().food(FoodBuilderRegistry.ASPARAGUSITEM)));
+		bellpepperitem = register("bellpepperitem", new ItemPamPig(BlockRegistry.pambellpeppercrop, properties().food(FoodBuilderRegistry.BELLPEPPERITEM)));
+		broccoliitem = register("broccoliitem", new ItemPamPig(BlockRegistry.pambroccolicrop, properties().food(FoodBuilderRegistry.BROCCOLIITEM)));
+		brusselsproutitem = register("brusselsproutitem", new ItemPamPig(BlockRegistry.pambrusselsproutcrop, properties().food(FoodBuilderRegistry.BRUSSELSPROUTITEM)));
+		cabbageitem = register("cabbageitem", new ItemPamPig(BlockRegistry.pamcabbagecrop, properties().food(FoodBuilderRegistry.CABBAGEITEM)));
+		caulifloweritem = register("caulifloweritem", new ItemPamPig(BlockRegistry.pamcauliflowercrop, properties().food(FoodBuilderRegistry.CAULIFLOWERITEM)));
+		celeryitem = register("celeryitem", new ItemPamPig(BlockRegistry.pamcelerycrop, properties().food(FoodBuilderRegistry.CELERYITEM)));
+		chilipepperitem = register("chilipepperitem", new ItemPamPig(BlockRegistry.pamchilipeppercrop, properties().food(FoodBuilderRegistry.CHILIPEPPERITEM)));
+		cucumberitem = register("cucumberitem", new ItemPamPig(BlockRegistry.pamcucumbercrop, properties().food(FoodBuilderRegistry.CUCUMBERITEM)));
+		eggplantitem = register("eggplantitem", new ItemPamPig(BlockRegistry.pameggplantcrop, properties().food(FoodBuilderRegistry.EGGPLANTITEM)));
+		kaleitem = register("kaleitem", new ItemPamPig(BlockRegistry.pamkalecrop, properties().food(FoodBuilderRegistry.KALEITEM)));
+		lettuceitem = register("lettuceitem", new ItemPamPig(BlockRegistry.pamlettucecrop, properties().food(FoodBuilderRegistry.LETTUCEITEM)));
+		okraitem = register("okraitem", new ItemPamPig(BlockRegistry.pamokracrop, properties().food(FoodBuilderRegistry.OKRAITEM)));
+		peasitem = register("peasitem", new ItemPamPig(BlockRegistry.pampeascrop, properties().food(FoodBuilderRegistry.PEASITEM)));
+		spinachitem	= register("spinachitem", new ItemPamPig(BlockRegistry.pamspinachcrop, properties().food(FoodBuilderRegistry.SPINACHITEM)));
+		tomatilloitem = register("tomatilloitem", new ItemPamPig(BlockRegistry.pamtomatillocrop, properties().food(FoodBuilderRegistry.TOMATILLOITEM)));
+		tomatoitem = register("tomatoitem", new ItemPamPig(BlockRegistry.pamtomatocrop, properties().food(FoodBuilderRegistry.TOMATOITEM)));
+		wintersquashitem = register("wintersquashitem", new ItemPamPig(BlockRegistry.pamwintersquashcrop, properties().food(FoodBuilderRegistry.WINTERSQUASHITEM)));
+		zucchiniitem = register("zucchiniitem", new ItemPamPig(BlockRegistry.pamzucchinicrop, properties().food(FoodBuilderRegistry.ZUCCHINIITEM)));
 
 		//Root Vegetable
-		arrowrootitem = register("arrowrootitem", new ItemPamPig(BlockRegistry.pamarrowrootcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ARROWROOTITEM)));
-		cassavaitem = register("cassavaitem", new ItemPamPig(BlockRegistry.pamcassavacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CASSAVAITEM)));
-		garlicitem = register("garlicitem", new ItemPamPig(BlockRegistry.pamgarliccrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.GARLICITEM)));
-		jicamaitem = register("jicamaitem", new ItemPamPig(BlockRegistry.pamjicamacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.JICAMAITEM)));
-		leekitem = register("leekitem", new ItemPamPig(BlockRegistry.pamleekcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.LEEKITEM)));
-		kohlrabiitem = register("kohlrabiitem", new ItemPamPig(BlockRegistry.pamkohlrabicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.KOHLRABIITEM)));
-		onionitem = register("onionitem", new ItemPamPig(BlockRegistry.pamonioncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ONIONITEM)));
-		parsnipitem = register("parsnipitem", new ItemPamPig(BlockRegistry.pamparsnipcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.PARSNIPITEM)));
-		peanutitem = register("peanutitem", new ItemPamPig(BlockRegistry.pampeanutcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.PEANUTITEM)));
-		radishitem = register("radishitem", new ItemPamPig(BlockRegistry.pamradishcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.RADISHITEM)));
-		rhubarbitem	 = register("rhubarbitem", new ItemPamPig(BlockRegistry.pamrhubarbcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.RHUBARBITEM)));
-		rutabagaitem = register("rutabagaitem", new ItemPamPig(BlockRegistry.pamrutabagacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.RUTABAGAITEM)));
-		scallionitem = register("scallionitem", new ItemPamPig(BlockRegistry.pamscallioncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.SCALLIONITEM)));
-		sweetpotatoitem = register("sweetpotatoitem", new ItemPamPig(BlockRegistry.pamsweetpotatocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.SWEETPOTATOITEM)));
-		taroitem = register("taroitem", new ItemPamPig(BlockRegistry.pamtarocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.TAROITEM)));
-		turnipitem = register("turnipitem", new ItemPamPig(BlockRegistry.pamturnipcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.TURNIPITEM)));
-		waterchestnutitem = register("waterchestnutitem", new ItemPamPig(BlockRegistry.pamwaterchestnutcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.WATERCHESTNUTITEM)));
+		arrowrootitem = register("arrowrootitem", new ItemPamPig(BlockRegistry.pamarrowrootcrop, properties().food(FoodBuilderRegistry.ARROWROOTITEM)));
+		cassavaitem = register("cassavaitem", new ItemPamPig(BlockRegistry.pamcassavacrop, properties().food(FoodBuilderRegistry.CASSAVAITEM)));
+		garlicitem = register("garlicitem", new ItemPamPig(BlockRegistry.pamgarliccrop, properties().food(FoodBuilderRegistry.GARLICITEM)));
+		jicamaitem = register("jicamaitem", new ItemPamPig(BlockRegistry.pamjicamacrop, properties().food(FoodBuilderRegistry.JICAMAITEM)));
+		leekitem = register("leekitem", new ItemPamPig(BlockRegistry.pamleekcrop, properties().food(FoodBuilderRegistry.LEEKITEM)));
+		kohlrabiitem = register("kohlrabiitem", new ItemPamPig(BlockRegistry.pamkohlrabicrop, properties().food(FoodBuilderRegistry.KOHLRABIITEM)));
+		onionitem = register("onionitem", new ItemPamPig(BlockRegistry.pamonioncrop, properties().food(FoodBuilderRegistry.ONIONITEM)));
+		parsnipitem = register("parsnipitem", new ItemPamPig(BlockRegistry.pamparsnipcrop, properties().food(FoodBuilderRegistry.PARSNIPITEM)));
+		peanutitem = register("peanutitem", new ItemPamPig(BlockRegistry.pampeanutcrop, properties().food(FoodBuilderRegistry.PEANUTITEM)));
+		radishitem = register("radishitem", new ItemPamPig(BlockRegistry.pamradishcrop, properties().food(FoodBuilderRegistry.RADISHITEM)));
+		rhubarbitem	 = register("rhubarbitem", new ItemPamPig(BlockRegistry.pamrhubarbcrop, properties().food(FoodBuilderRegistry.RHUBARBITEM)));
+		rutabagaitem = register("rutabagaitem", new ItemPamPig(BlockRegistry.pamrutabagacrop, properties().food(FoodBuilderRegistry.RUTABAGAITEM)));
+		scallionitem = register("scallionitem", new ItemPamPig(BlockRegistry.pamscallioncrop, properties().food(FoodBuilderRegistry.SCALLIONITEM)));
+		sweetpotatoitem = register("sweetpotatoitem", new ItemPamPig(BlockRegistry.pamsweetpotatocrop, properties().food(FoodBuilderRegistry.SWEETPOTATOITEM)));
+		taroitem = register("taroitem", new ItemPamPig(BlockRegistry.pamtarocrop, properties().food(FoodBuilderRegistry.TAROITEM)));
+		turnipitem = register("turnipitem", new ItemPamPig(BlockRegistry.pamturnipcrop, properties().food(FoodBuilderRegistry.TURNIPITEM)));
+		waterchestnutitem = register("waterchestnutitem", new ItemPamPig(BlockRegistry.pamwaterchestnutcrop, properties().food(FoodBuilderRegistry.WATERCHESTNUTITEM)));
 
 		//Fruits
-		blackberryitem = register("blackberryitem", new ItemPamRabbit(BlockRegistry.pamblackberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BLACKBERRYITEM)));
-		blueberryitem = register("blueberryitem", new ItemPamRabbit(BlockRegistry.pamblueberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BLUEBERRYITEM)));
-		cactusfruititem = register("cactusfruititem", new ItemPamRabbit(BlockRegistry.pamcactusfruitcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CACTUSFRUITITEM)));
-		candleberryitem = register("candleberryitem", new ItemPamRabbit(BlockRegistry.pamcandleberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CANDLEBERRYITEM)));
-		cantaloupeitem = register("cantaloupeitem", new ItemPamRabbit(BlockRegistry.pamcantaloupecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CANTALOUPEITEM)));
-		cranberryitem = register("cranberryitem", new ItemPamRabbit(BlockRegistry.pamcranberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.CRANBERRYITEM)));
-		elderberryitem = register("elderberryitem", new ItemPamRabbit(BlockRegistry.pamelderberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ELDERBERRYITEM)));
-		grapeitem = register("grapeitem", new ItemPamRabbit(BlockRegistry.pamgrapecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.GRAPEITEM)));
-		greengrapeitem = register("greengrapeitem", new ItemPamRabbit(BlockRegistry.pamgreengrapecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.GREENGRAPEITEM)));
-		huckleberryitem = register("huckleberryitem", new ItemPamRabbit(BlockRegistry.pamhuckleberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.HUCKLEBERRYITEM)));
-		juniperberryitem = register("juniperberryitem", new ItemPamRabbit(BlockRegistry.pamjuniperberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.JUNIPERBERRYITEM)));
-		kiwiitem = register("kiwiitem", new ItemPamRabbit(BlockRegistry.pamkiwicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.KIWIITEM)));
-		mulberryitem = register("mulberryitem", new ItemPamRabbit(BlockRegistry.pammulberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.MULBERRYITEM)));
-		pineappleitem = register("pineappleitem", new ItemPamRabbit(BlockRegistry.pampineapplecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.PINEAPPLEITEM)));
-		raspberryitem = register("raspberryitem", new ItemPamRabbit(BlockRegistry.pamraspberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.RASPBERRYITEM)));
-		strawberryitem = register("strawberryitem", new ItemPamRabbit(BlockRegistry.pamstrawberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.STRAWBERRYITEM)));
+		blackberryitem = register("blackberryitem", new ItemPamRabbit(BlockRegistry.pamblackberrycrop, properties().food(FoodBuilderRegistry.BLACKBERRYITEM)));
+		blueberryitem = register("blueberryitem", new ItemPamRabbit(BlockRegistry.pamblueberrycrop, properties().food(FoodBuilderRegistry.BLUEBERRYITEM)));
+		cactusfruititem = register("cactusfruititem", new ItemPamRabbit(BlockRegistry.pamcactusfruitcrop, properties().food(FoodBuilderRegistry.CACTUSFRUITITEM)));
+		candleberryitem = register("candleberryitem", new ItemPamRabbit(BlockRegistry.pamcandleberrycrop, properties().food(FoodBuilderRegistry.CANDLEBERRYITEM)));
+		cantaloupeitem = register("cantaloupeitem", new ItemPamRabbit(BlockRegistry.pamcantaloupecrop, properties().food(FoodBuilderRegistry.CANTALOUPEITEM)));
+		cranberryitem = register("cranberryitem", new ItemPamRabbit(BlockRegistry.pamcranberrycrop, properties().food(FoodBuilderRegistry.CRANBERRYITEM)));
+		elderberryitem = register("elderberryitem", new ItemPamRabbit(BlockRegistry.pamelderberrycrop, properties().food(FoodBuilderRegistry.ELDERBERRYITEM)));
+		grapeitem = register("grapeitem", new ItemPamRabbit(BlockRegistry.pamgrapecrop, properties().food(FoodBuilderRegistry.GRAPEITEM)));
+		greengrapeitem = register("greengrapeitem", new ItemPamRabbit(BlockRegistry.pamgreengrapecrop, properties().food(FoodBuilderRegistry.GREENGRAPEITEM)));
+		huckleberryitem = register("huckleberryitem", new ItemPamRabbit(BlockRegistry.pamhuckleberrycrop, properties().food(FoodBuilderRegistry.HUCKLEBERRYITEM)));
+		juniperberryitem = register("juniperberryitem", new ItemPamRabbit(BlockRegistry.pamjuniperberrycrop, properties().food(FoodBuilderRegistry.JUNIPERBERRYITEM)));
+		kiwiitem = register("kiwiitem", new ItemPamRabbit(BlockRegistry.pamkiwicrop, properties().food(FoodBuilderRegistry.KIWIITEM)));
+		mulberryitem = register("mulberryitem", new ItemPamRabbit(BlockRegistry.pammulberrycrop, properties().food(FoodBuilderRegistry.MULBERRYITEM)));
+		pineappleitem = register("pineappleitem", new ItemPamRabbit(BlockRegistry.pampineapplecrop, properties().food(FoodBuilderRegistry.PINEAPPLEITEM)));
+		raspberryitem = register("raspberryitem", new ItemPamRabbit(BlockRegistry.pamraspberrycrop, properties().food(FoodBuilderRegistry.RASPBERRYITEM)));
+		strawberryitem = register("strawberryitem", new ItemPamRabbit(BlockRegistry.pamstrawberrycrop, properties().food(FoodBuilderRegistry.STRAWBERRYITEM)));
 
 		//Misc
 
 		//Drink
-		coffeebeanitem = register("coffeebeanitem", new ItemPamFoodSeed(BlockRegistry.pamcoffeebeancrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		tealeafitem = register("tealeafitem", new ItemPamFoodSeed(BlockRegistry.pamtealeafcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
+		coffeebeanitem = register("coffeebeanitem", new ItemPamFoodSeed(BlockRegistry.pamcoffeebeancrop, properties()));
+		tealeafitem = register("tealeafitem", new ItemPamFoodSeed(BlockRegistry.pamtealeafcrop, properties()));
 		//Sugar
-		agaveitem = register("agaveitem", new ItemPamFoodSeed(BlockRegistry.pamagavecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
+		agaveitem = register("agaveitem", new ItemPamFoodSeed(BlockRegistry.pamagavecrop, properties()));
 		//Mushroom
-		whitemushroomitem = register("whitemushroomitem", new ItemPamFoodSeed(BlockRegistry.pamwhitemushroomcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.WHITEMUSHROOMITEM)));//EDIBLE
+		whitemushroomitem = register("whitemushroomitem", new ItemPamFoodSeed(BlockRegistry.pamwhitemushroomcrop, properties().food(FoodBuilderRegistry.WHITEMUSHROOMITEM)));//EDIBLE
 		//Spice
-		gingeritem = register("gingeritem", new ItemPamFoodSeed(BlockRegistry.pamgingercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		sesameseedsitem = register("sesameseedsitem", new ItemPamFoodSeed(BlockRegistry.pamsesameseedscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		spiceleafitem = register("spiceleafitem", new ItemPamRabbit(BlockRegistry.pamspiceleafcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.SPICELEAF)));//EDIBLE
-		mustardseedsitem = register("mustardseedsitem", new ItemPamGrain(BlockRegistry.pammustardseedscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
+		gingeritem = register("gingeritem", new ItemPamFoodSeed(BlockRegistry.pamgingercrop, properties()));
+		sesameseedsitem = register("sesameseedsitem", new ItemPamFoodSeed(BlockRegistry.pamsesameseedscrop, properties()));
+		spiceleafitem = register("spiceleafitem", new ItemPamRabbit(BlockRegistry.pamspiceleafcrop, properties().food(FoodBuilderRegistry.SPICELEAF)));//EDIBLE
+		mustardseedsitem = register("mustardseedsitem", new ItemPamGrain(BlockRegistry.pammustardseedscrop, properties()));
 
 		//Foods
-		bakedarrowrootitem = register("bakedarrowrootitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDARROWROOTITEM)));
-		bakedcassavaitem = register("bakedcassavaitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDCASSAVAITEM)));
-		roastedgarlicitem = register("roastedgarlicitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDGARLICITEM)));
-		bakedjicamaitem = register("bakedjicamaitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDJICAMAITEM)));
-		roastedleekitem = register("roastedleekitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDLEEKITEM)));
-		roastedkohlrabiitem = register("roastedkohlrabiitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDKOHLRABIITEM)));
-		roastedonionitem = register("roastedonionitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDONIONITEM)));
-		bakedparsnipitem = register("bakedparsnipitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDPARSNIPITEM)));
-		roastedpeanutitem = register("roastedpeanutitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDPEANUTITEM)));
-		roastedradishitem = register("roastedradishitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDRADISHITEM)));
-		roastedrhubarbitem = register("roastedrhubarbitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDRHUBARBITEM)));
-		bakedrutabagaitem = register("bakedrutabagaitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDRUTABAGAITEM)));
-		roastedscallionitem = register("roastedscallionitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDSCALLIONITEM)));
-		bakedsweetpotatoitem = register("bakedsweetpotatoitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDSWEETPOTATOITEM)));
-		bakedtaroitem = register("bakedtaroitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDTAROITEM)));
-		bakedturnipitem = register("bakedturnipitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDTURNIPITEM)));
-		bakedwaterchestnutitem = register("bakedwaterchestnutitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.BAKEDWATERCHESTNUTITEM)));
-		roastedmushroomitem = register("roastedmushroomitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.ROASTEDMUSHROOMITEM)));
-		hotteaitem = register("hotteaitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.HOTTEAITEM)));
-		hotcoffeeitem = register("hotcoffeeitem", new Item((new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP).food(FoodBuilderRegistry.HOTCOFFEEITEM)));
+		bakedarrowrootitem = register("bakedarrowrootitem", new Item(properties().food(FoodBuilderRegistry.BAKEDARROWROOTITEM)));
+		bakedcassavaitem = register("bakedcassavaitem", new Item(properties().food(FoodBuilderRegistry.BAKEDCASSAVAITEM)));
+		roastedgarlicitem = register("roastedgarlicitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDGARLICITEM)));
+		bakedjicamaitem = register("bakedjicamaitem", new Item(properties().food(FoodBuilderRegistry.BAKEDJICAMAITEM)));
+		roastedleekitem = register("roastedleekitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDLEEKITEM)));
+		roastedkohlrabiitem = register("roastedkohlrabiitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDKOHLRABIITEM)));
+		roastedonionitem = register("roastedonionitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDONIONITEM)));
+		bakedparsnipitem = register("bakedparsnipitem", new Item(properties().food(FoodBuilderRegistry.BAKEDPARSNIPITEM)));
+		roastedpeanutitem = register("roastedpeanutitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDPEANUTITEM)));
+		roastedradishitem = register("roastedradishitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDRADISHITEM)));
+		roastedrhubarbitem = register("roastedrhubarbitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDRHUBARBITEM)));
+		bakedrutabagaitem = register("bakedrutabagaitem", new Item(properties().food(FoodBuilderRegistry.BAKEDRUTABAGAITEM)));
+		roastedscallionitem = register("roastedscallionitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDSCALLIONITEM)));
+		bakedsweetpotatoitem = register("bakedsweetpotatoitem", new Item(properties().food(FoodBuilderRegistry.BAKEDSWEETPOTATOITEM)));
+		bakedtaroitem = register("bakedtaroitem", new Item(properties().food(FoodBuilderRegistry.BAKEDTAROITEM)));
+		bakedturnipitem = register("bakedturnipitem", new Item(properties().food(FoodBuilderRegistry.BAKEDTURNIPITEM)));
+		bakedwaterchestnutitem = register("bakedwaterchestnutitem", new Item(properties().food(FoodBuilderRegistry.BAKEDWATERCHESTNUTITEM)));
+		roastedmushroomitem = register("roastedmushroomitem", new Item(properties().food(FoodBuilderRegistry.ROASTEDMUSHROOMITEM)));
+		hotteaitem = register("hotteaitem", new Item(properties().food(FoodBuilderRegistry.HOTTEAITEM)));
+		hotcoffeeitem = register("hotcoffeeitem", new Item(properties().food(FoodBuilderRegistry.HOTCOFFEEITEM)));
 
 		//Seeds
-		agaveseeditem = register("agaveseeditem", new ItemPamSeed(BlockRegistry.pamagavecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		amaranthseeditem = register("amaranthseeditem", new ItemPamSeed(BlockRegistry.pamamaranthcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		arrowrootseeditem = register("arrowrootseeditem", new ItemPamSeed(BlockRegistry.pamarrowrootcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		artichokeseeditem = register("artichokeseeditem", new ItemPamSeed(BlockRegistry.pamartichokecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		asparagusseeditem = register("asparagusseeditem", new ItemPamSeed(BlockRegistry.pamasparaguscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		barleyseeditem = register("barleyseeditem", new ItemPamSeed(BlockRegistry.pambarleycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		beanseeditem = register("beanseeditem", new ItemPamSeed(BlockRegistry.pambeancrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		bellpepperseeditem = register("bellpepperseeditem", new ItemPamSeed(BlockRegistry.pambellpeppercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		blackberryseeditem = register("blackberryseeditem", new ItemPamSeed(BlockRegistry.pamblackberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		blueberryseeditem = register("blueberryseeditem", new ItemPamSeed(BlockRegistry.pamblueberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		broccoliseeditem = register("broccoliseeditem", new ItemPamSeed(BlockRegistry.pambroccolicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		brusselsproutseeditem = register("brusselsproutseeditem", new ItemPamSeed(BlockRegistry.pambrusselsproutcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cabbageseeditem = register("cabbageseeditem", new ItemPamSeed(BlockRegistry.pamcabbagecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cactusfruitseeditem = register("cactusfruitseeditem", new ItemPamSeed(BlockRegistry.pamcactusfruitcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		candleberryseeditem = register("candleberryseeditem", new ItemPamSeed(BlockRegistry.pamcandleberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cantaloupeseeditem = register("cantaloupeseeditem", new ItemPamSeed(BlockRegistry.pamcantaloupecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cassavaseeditem = register("cassavaseeditem", new ItemPamSeed(BlockRegistry.pamcassavacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cauliflowerseeditem = register("cauliflowerseeditem", new ItemPamSeed(BlockRegistry.pamcauliflowercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		celeryseeditem = register("celeryseeditem", new ItemPamSeed(BlockRegistry.pamcelerycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		chickpeaseeditem = register("chickpeaseeditem", new ItemPamSeed(BlockRegistry.pamchickpeacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		chilipepperseeditem = register("chilipepperseeditem", new ItemPamSeed(BlockRegistry.pamchilipeppercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		coffeebeanseeditem = register("coffeebeanseeditem", new ItemPamSeed(BlockRegistry.pamcoffeebeancrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cornseeditem = register("cornseeditem", new ItemPamSeed(BlockRegistry.pamcorncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cottonseeditem = register("cottonseeditem", new ItemPamSeed(BlockRegistry.pamcottoncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cranberryseeditem = register("cranberryseeditem", new ItemPamSeed(BlockRegistry.pamcranberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		cucumberseeditem = register("cucumberseeditem", new ItemPamSeed(BlockRegistry.pamcucumbercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		eggplantseeditem = register("eggplantseeditem", new ItemPamSeed(BlockRegistry.pameggplantcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		elderberryseeditem = register("elderberryseeditem", new ItemPamSeed(BlockRegistry.pamelderberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		flaxseeditem = register("flaxseeditem", new ItemPamSeed(BlockRegistry.pamflaxcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		garlicseeditem = register("garlicseeditem", new ItemPamSeed(BlockRegistry.pamgarliccrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		gingerseeditem = register("gingerseeditem", new ItemPamSeed(BlockRegistry.pamgingercrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		grapeseeditem = register("grapeseeditem", new ItemPamSeed(BlockRegistry.pamgrapecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		greengrapeseeditem = register("greengrapeseeditem", new ItemPamSeed(BlockRegistry.pamgreengrapecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		huckleberryseeditem = register("huckleberryseeditem", new ItemPamSeed(BlockRegistry.pamhuckleberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		jicamaseeditem = register("jicamaseeditem", new ItemPamSeed(BlockRegistry.pamjicamacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		juniperberryseeditem = register("juniperberryseeditem", new ItemPamSeed(BlockRegistry.pamjuniperberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		juteseeditem = register("juteseeditem", new ItemPamSeed(BlockRegistry.pamjutecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		kaleseeditem = register("kaleseeditem", new ItemPamSeed(BlockRegistry.pamkalecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		kenafseeditem = register("kenafseeditem", new ItemPamSeed(BlockRegistry.pamkenafcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		kiwiseeditem = register("kiwiseeditem", new ItemPamSeed(BlockRegistry.pamkiwicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		kohlrabiseeditem = register("kohlrabiseeditem", new ItemPamSeed(BlockRegistry.pamkohlrabicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		leekseeditem = register("leekseeditem", new ItemPamSeed(BlockRegistry.pamleekcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		lentilseeditem = register("lentilseeditem", new ItemPamSeed(BlockRegistry.pamlentilcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		lettuceseeditem = register("lettuceseeditem", new ItemPamSeed(BlockRegistry.pamlettucecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		milletseeditem = register("milletseeditem", new ItemPamSeed(BlockRegistry.pammilletcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		mulberryseeditem = register("mulberryseeditem", new ItemPamSeed(BlockRegistry.pammulberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		mustardseedsseeditem = register("mustardseedsseeditem", new ItemPamSeed(BlockRegistry.pammustardseedscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		oatsseeditem = register("oatsseeditem", new ItemPamSeed(BlockRegistry.pamoatscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		okraseeditem = register("okraseeditem", new ItemPamSeed(BlockRegistry.pamokracrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		onionseeditem = register("onionseeditem", new ItemPamSeed(BlockRegistry.pamonioncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		parsnipseeditem = register("parsnipseeditem", new ItemPamSeed(BlockRegistry.pamparsnipcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		peanutseeditem = register("peanutseeditem", new ItemPamSeed(BlockRegistry.pampeanutcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		peasseeditem = register("peasseeditem", new ItemPamSeed(BlockRegistry.pampeascrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		pineappleseeditem = register("pineappleseeditem", new ItemPamSeed(BlockRegistry.pampineapplecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		quinoaseeditem = register("quinoaseeditem", new ItemPamSeed(BlockRegistry.pamquinoacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		radishseeditem = register("radishseeditem", new ItemPamSeed(BlockRegistry.pamradishcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		raspberryseeditem = register("raspberryseeditem", new ItemPamSeed(BlockRegistry.pamraspberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		rhubarbseeditem = register("rhubarbseeditem", new ItemPamSeed(BlockRegistry.pamrhubarbcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		riceseeditem = register("riceseeditem", new ItemPamSeed(BlockRegistry.pamricecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		rutabagaseeditem = register("rutabagaseeditem", new ItemPamSeed(BlockRegistry.pamrutabagacrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		ryeseeditem = register("ryeseeditem", new ItemPamSeed(BlockRegistry.pamryecrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		scallionseeditem = register("scallionseeditem", new ItemPamSeed(BlockRegistry.pamscallioncrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		sesameseedsseeditem = register("sesameseedsseeditem", new ItemPamSeed(BlockRegistry.pamsesameseedscrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		sisalseeditem = register("sisalseeditem", new ItemPamSeed(BlockRegistry.pamsisalcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		soybeanseeditem = register("soybeanseeditem", new ItemPamSeed(BlockRegistry.pamsoybeancrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		spiceleafseeditem = register("spiceleafseeditem", new ItemPamSeed(BlockRegistry.pamspiceleafcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		spinachseeditem = register("spinachseeditem", new ItemPamSeed(BlockRegistry.pamspinachcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		strawberryseeditem = register("strawberryseeditem", new ItemPamSeed(BlockRegistry.pamstrawberrycrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		sweetpotatoseeditem = register("sweetpotatoseeditem", new ItemPamSeed(BlockRegistry.pamsweetpotatocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		taroseeditem = register("taroseeditem", new ItemPamSeed(BlockRegistry.pamtarocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		tealeafseeditem = register("tealeafseeditem", new ItemPamSeed(BlockRegistry.pamtealeafcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		tomatilloseeditem = register("tomatilloseeditem", new ItemPamSeed(BlockRegistry.pamtomatillocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		tomatoseeditem = register("tomatoseeditem", new ItemPamSeed(BlockRegistry.pamtomatocrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		turnipseeditem = register("turnipseeditem", new ItemPamSeed(BlockRegistry.pamturnipcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		waterchestnutseeditem = register("waterchestnutseeditem", new ItemPamSeed(BlockRegistry.pamwaterchestnutcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		whitemushroomseeditem = register("whitemushroomseeditem", new ItemPamSeed(BlockRegistry.pamwhitemushroomcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		wintersquashseeditem = register("wintersquashseeditem", new ItemPamSeed(BlockRegistry.pamwintersquashcrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-		zucchiniseeditem = register("zucchiniseeditem", new ItemPamSeed(BlockRegistry.pamzucchinicrop, (new Item.Properties()).tab(Pamhc2crops.ITEM_GROUP)));
-
-
-
+		agaveseeditem = register("agaveseeditem", new ItemPamSeed(BlockRegistry.pamagavecrop, properties()));
+		amaranthseeditem = register("amaranthseeditem", new ItemPamSeed(BlockRegistry.pamamaranthcrop, properties()));
+		arrowrootseeditem = register("arrowrootseeditem", new ItemPamSeed(BlockRegistry.pamarrowrootcrop, properties()));
+		artichokeseeditem = register("artichokeseeditem", new ItemPamSeed(BlockRegistry.pamartichokecrop, properties()));
+		asparagusseeditem = register("asparagusseeditem", new ItemPamSeed(BlockRegistry.pamasparaguscrop, properties()));
+		barleyseeditem = register("barleyseeditem", new ItemPamSeed(BlockRegistry.pambarleycrop, properties()));
+		beanseeditem = register("beanseeditem", new ItemPamSeed(BlockRegistry.pambeancrop, properties()));
+		bellpepperseeditem = register("bellpepperseeditem", new ItemPamSeed(BlockRegistry.pambellpeppercrop, properties()));
+		blackberryseeditem = register("blackberryseeditem", new ItemPamSeed(BlockRegistry.pamblackberrycrop, properties()));
+		blueberryseeditem = register("blueberryseeditem", new ItemPamSeed(BlockRegistry.pamblueberrycrop, properties()));
+		broccoliseeditem = register("broccoliseeditem", new ItemPamSeed(BlockRegistry.pambroccolicrop, properties()));
+		brusselsproutseeditem = register("brusselsproutseeditem", new ItemPamSeed(BlockRegistry.pambrusselsproutcrop, properties()));
+		cabbageseeditem = register("cabbageseeditem", new ItemPamSeed(BlockRegistry.pamcabbagecrop, properties()));
+		cactusfruitseeditem = register("cactusfruitseeditem", new ItemPamSeed(BlockRegistry.pamcactusfruitcrop, properties()));
+		candleberryseeditem = register("candleberryseeditem", new ItemPamSeed(BlockRegistry.pamcandleberrycrop, properties()));
+		cantaloupeseeditem = register("cantaloupeseeditem", new ItemPamSeed(BlockRegistry.pamcantaloupecrop, properties()));
+		cassavaseeditem = register("cassavaseeditem", new ItemPamSeed(BlockRegistry.pamcassavacrop, properties()));
+		cauliflowerseeditem = register("cauliflowerseeditem", new ItemPamSeed(BlockRegistry.pamcauliflowercrop, properties()));
+		celeryseeditem = register("celeryseeditem", new ItemPamSeed(BlockRegistry.pamcelerycrop, properties()));
+		chickpeaseeditem = register("chickpeaseeditem", new ItemPamSeed(BlockRegistry.pamchickpeacrop, properties()));
+		chilipepperseeditem = register("chilipepperseeditem", new ItemPamSeed(BlockRegistry.pamchilipeppercrop, properties()));
+		coffeebeanseeditem = register("coffeebeanseeditem", new ItemPamSeed(BlockRegistry.pamcoffeebeancrop, properties()));
+		cornseeditem = register("cornseeditem", new ItemPamSeed(BlockRegistry.pamcorncrop, properties()));
+		cottonseeditem = register("cottonseeditem", new ItemPamSeed(BlockRegistry.pamcottoncrop, properties()));
+		cranberryseeditem = register("cranberryseeditem", new ItemPamSeed(BlockRegistry.pamcranberrycrop, properties()));
+		cucumberseeditem = register("cucumberseeditem", new ItemPamSeed(BlockRegistry.pamcucumbercrop, properties()));
+		eggplantseeditem = register("eggplantseeditem", new ItemPamSeed(BlockRegistry.pameggplantcrop, properties()));
+		elderberryseeditem = register("elderberryseeditem", new ItemPamSeed(BlockRegistry.pamelderberrycrop, properties()));
+		flaxseeditem = register("flaxseeditem", new ItemPamSeed(BlockRegistry.pamflaxcrop, properties()));
+		garlicseeditem = register("garlicseeditem", new ItemPamSeed(BlockRegistry.pamgarliccrop, properties()));
+		gingerseeditem = register("gingerseeditem", new ItemPamSeed(BlockRegistry.pamgingercrop, properties()));
+		grapeseeditem = register("grapeseeditem", new ItemPamSeed(BlockRegistry.pamgrapecrop, properties()));
+		greengrapeseeditem = register("greengrapeseeditem", new ItemPamSeed(BlockRegistry.pamgreengrapecrop, properties()));
+		huckleberryseeditem = register("huckleberryseeditem", new ItemPamSeed(BlockRegistry.pamhuckleberrycrop, properties()));
+		jicamaseeditem = register("jicamaseeditem", new ItemPamSeed(BlockRegistry.pamjicamacrop, properties()));
+		juniperberryseeditem = register("juniperberryseeditem", new ItemPamSeed(BlockRegistry.pamjuniperberrycrop, properties()));
+		juteseeditem = register("juteseeditem", new ItemPamSeed(BlockRegistry.pamjutecrop, properties()));
+		kaleseeditem = register("kaleseeditem", new ItemPamSeed(BlockRegistry.pamkalecrop, properties()));
+		kenafseeditem = register("kenafseeditem", new ItemPamSeed(BlockRegistry.pamkenafcrop, properties()));
+		kiwiseeditem = register("kiwiseeditem", new ItemPamSeed(BlockRegistry.pamkiwicrop, properties()));
+		kohlrabiseeditem = register("kohlrabiseeditem", new ItemPamSeed(BlockRegistry.pamkohlrabicrop, properties()));
+		leekseeditem = register("leekseeditem", new ItemPamSeed(BlockRegistry.pamleekcrop, properties()));
+		lentilseeditem = register("lentilseeditem", new ItemPamSeed(BlockRegistry.pamlentilcrop, properties()));
+		lettuceseeditem = register("lettuceseeditem", new ItemPamSeed(BlockRegistry.pamlettucecrop, properties()));
+		milletseeditem = register("milletseeditem", new ItemPamSeed(BlockRegistry.pammilletcrop, properties()));
+		mulberryseeditem = register("mulberryseeditem", new ItemPamSeed(BlockRegistry.pammulberrycrop, properties()));
+		mustardseedsseeditem = register("mustardseedsseeditem", new ItemPamSeed(BlockRegistry.pammustardseedscrop, properties()));
+		oatsseeditem = register("oatsseeditem", new ItemPamSeed(BlockRegistry.pamoatscrop, properties()));
+		okraseeditem = register("okraseeditem", new ItemPamSeed(BlockRegistry.pamokracrop, properties()));
+		onionseeditem = register("onionseeditem", new ItemPamSeed(BlockRegistry.pamonioncrop, properties()));
+		parsnipseeditem = register("parsnipseeditem", new ItemPamSeed(BlockRegistry.pamparsnipcrop, properties()));
+		peanutseeditem = register("peanutseeditem", new ItemPamSeed(BlockRegistry.pampeanutcrop, properties()));
+		peasseeditem = register("peasseeditem", new ItemPamSeed(BlockRegistry.pampeascrop, properties()));
+		pineappleseeditem = register("pineappleseeditem", new ItemPamSeed(BlockRegistry.pampineapplecrop, properties()));
+		quinoaseeditem = register("quinoaseeditem", new ItemPamSeed(BlockRegistry.pamquinoacrop, properties()));
+		radishseeditem = register("radishseeditem", new ItemPamSeed(BlockRegistry.pamradishcrop, properties()));
+		raspberryseeditem = register("raspberryseeditem", new ItemPamSeed(BlockRegistry.pamraspberrycrop, properties()));
+		rhubarbseeditem = register("rhubarbseeditem", new ItemPamSeed(BlockRegistry.pamrhubarbcrop, properties()));
+		riceseeditem = register("riceseeditem", new ItemPamSeed(BlockRegistry.pamricecrop, properties()));
+		rutabagaseeditem = register("rutabagaseeditem", new ItemPamSeed(BlockRegistry.pamrutabagacrop, properties()));
+		ryeseeditem = register("ryeseeditem", new ItemPamSeed(BlockRegistry.pamryecrop, properties()));
+		scallionseeditem = register("scallionseeditem", new ItemPamSeed(BlockRegistry.pamscallioncrop, properties()));
+		sesameseedsseeditem = register("sesameseedsseeditem", new ItemPamSeed(BlockRegistry.pamsesameseedscrop, properties()));
+		sisalseeditem = register("sisalseeditem", new ItemPamSeed(BlockRegistry.pamsisalcrop, properties()));
+		soybeanseeditem = register("soybeanseeditem", new ItemPamSeed(BlockRegistry.pamsoybeancrop, properties()));
+		spiceleafseeditem = register("spiceleafseeditem", new ItemPamSeed(BlockRegistry.pamspiceleafcrop, properties()));
+		spinachseeditem = register("spinachseeditem", new ItemPamSeed(BlockRegistry.pamspinachcrop, properties()));
+		strawberryseeditem = register("strawberryseeditem", new ItemPamSeed(BlockRegistry.pamstrawberrycrop, properties()));
+		sweetpotatoseeditem = register("sweetpotatoseeditem", new ItemPamSeed(BlockRegistry.pamsweetpotatocrop, properties()));
+		taroseeditem = register("taroseeditem", new ItemPamSeed(BlockRegistry.pamtarocrop, properties()));
+		tealeafseeditem = register("tealeafseeditem", new ItemPamSeed(BlockRegistry.pamtealeafcrop, properties()));
+		tomatilloseeditem = register("tomatilloseeditem", new ItemPamSeed(BlockRegistry.pamtomatillocrop, properties()));
+		tomatoseeditem = register("tomatoseeditem", new ItemPamSeed(BlockRegistry.pamtomatocrop, properties()));
+		turnipseeditem = register("turnipseeditem", new ItemPamSeed(BlockRegistry.pamturnipcrop, properties()));
+		waterchestnutseeditem = register("waterchestnutseeditem", new ItemPamSeed(BlockRegistry.pamwaterchestnutcrop, properties()));
+		whitemushroomseeditem = register("whitemushroomseeditem", new ItemPamSeed(BlockRegistry.pamwhitemushroomcrop, properties()));
+		wintersquashseeditem = register("wintersquashseeditem", new ItemPamSeed(BlockRegistry.pamwintersquashcrop, properties()));
+		zucchiniseeditem = register("zucchiniseeditem", new ItemPamSeed(BlockRegistry.pamzucchinicrop, properties()));
 	}
-
 
 	private static <T extends Item> T register(String name, T item) {
 		ResourceLocation id = Pamhc2crops.getId(name);
@@ -428,8 +424,4 @@ public class ItemRegistry {
 		ForgeRegistries.ITEMS.register(item);
 		return item;
 	}
-
-
-
-
 }
