@@ -1,12 +1,10 @@
 package pam.pamhc2crops.items;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.NonNullList;
-
-import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 
 public class ItemPamFoodSeed extends ItemNameBlockItem {
 	public ItemPamFoodSeed(Block blockIn, Properties properties) {

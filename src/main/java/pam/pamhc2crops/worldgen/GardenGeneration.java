@@ -2,7 +2,6 @@ package pam.pamhc2crops.worldgen;
 
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 import pam.pamhc2crops.config.EnableConfig;

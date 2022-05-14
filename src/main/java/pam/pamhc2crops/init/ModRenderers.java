@@ -1,9 +1,9 @@
 package pam.pamhc2crops.init;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 public class ModRenderers {
 

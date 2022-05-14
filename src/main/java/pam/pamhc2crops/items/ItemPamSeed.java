@@ -1,19 +1,17 @@
 package pam.pamhc2crops.items;
 
-import net.minecraft.world.level.block.Block;
+import net.minecraft.core.NonNullList;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.core.NonNullList;
-
-import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.level.block.Block;
 
 public class ItemPamSeed extends ItemNameBlockItem {
 
