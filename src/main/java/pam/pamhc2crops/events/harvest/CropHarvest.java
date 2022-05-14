@@ -1,8 +1,13 @@
 package pam.pamhc2crops.events.harvest;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Method;
 import java.util.List;
 
+import org.jetbrains.annotations.Nullable;
+
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
@@ -26,17 +31,23 @@ import pam.pamhc2crops.config.RightClickConfig;
 
 public class CropHarvest {
 
-	private static final Method seedDrops;
+	private static final MethodHandle CROPBLOCK_GETBASESEEDID;
 
 	static {
-		seedDrops = ObfuscationReflectionHelper.findMethod(CropBlock.class, "getBaseSeedId");
+		try {
+			Method getBaseSeedId = ObfuscationReflectionHelper.findMethod(CropBlock.class, "m_6404_");
+			CROPBLOCK_GETBASESEEDID = MethodHandles.publicLookup().unreflect(getBaseSeedId);
+		} catch (Exception e) {
+			throw new IllegalStateException(e);
+		}
 	}
 
-	private Item getCropSeed(Block block) {
+	@Nullable
+	private ItemLike getCropSeed(CropBlock block) {
 		try {
-			return (Item) seedDrops.invoke(block);
-		} catch (Exception e) {
-			Pamhc2crops.LOGGER.error("Where the heck is the seed", e.getLocalizedMessage());
+			return (ItemLike) CROPBLOCK_GETBASESEEDID.invoke(block);
+		} catch (Throwable e) {
+			Pamhc2crops.LOGGER.error("Failed to get crop seed!", e);
 		}
 
 		return null;
@@ -57,8 +68,10 @@ public class CropHarvest {
 								(ServerLevel) event.getWorld(), event.getPos(),
 								event.getWorld().getBlockEntity(event.getPos()));
 
+						Item seed = getCropSeed(crop).asItem();
+
 						for (ItemStack stack : drops) {
-							if (stack.getItem() != getCropSeed(crop))
+							if (stack.getItem() != seed)
 								event.getWorld()
 								.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
 										event.getPos().getY(), event.getPos().getZ(), stack));
@@ -98,11 +111,10 @@ public class CropHarvest {
 									(ServerLevel) event.getWorld(), event.getPos(),
 									event.getWorld().getBlockEntity(event.getPos()));
 
-							for (int i = 0; i < drops.size(); i++) {
+							for (ItemStack stack : drops) {
 								event.getWorld()
 								.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
-										event.getPos().getY(), event.getPos().getZ(),
-										drops.get(i)));
+										event.getPos().getY(), event.getPos().getZ(), stack));
 							}
 
 							event.getPlayer().causeFoodExhaustion(.05F);
