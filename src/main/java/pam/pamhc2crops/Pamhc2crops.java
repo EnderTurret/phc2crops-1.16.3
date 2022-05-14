@@ -48,7 +48,7 @@ public class Pamhc2crops {
 
 		final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modBus.addListener(Pamhc2crops::commonSetup);
-		modBus.addGenericListener(Block.class, BlockRegistry::registerAll);
+		BlockRegistry.REGISTRY.register(modBus);
 		modBus.addGenericListener(Item.class, ItemRegistry::registerAll);
 
 		modBus.addGenericListener(Feature.class, WorldGenRegistry::registerFeatures);

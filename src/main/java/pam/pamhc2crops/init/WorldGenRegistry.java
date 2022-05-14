@@ -26,12 +26,12 @@ public class WorldGenRegistry {
 
 	private static final List<FeatureHolder<?, ?>> HOLDERS = new ArrayList<>();
 
-	public static final FeatureHolder<?, ?> ARID_GARDEN = garden("arid_garden", () -> BlockRegistry.aridgarden);
-	public static final FeatureHolder<?, ?> FROST_GARDEN = garden("frost_garden", () -> BlockRegistry.frostgarden);
-	public static final FeatureHolder<?, ?> TROPICAL_GARDEN = garden("tropical_garden", () -> BlockRegistry.tropicalgarden);
-	public static final FeatureHolder<?, ?> WINDY_GARDEN = garden("windy_garden", () -> BlockRegistry.windygarden);
-	public static final FeatureHolder<?, ?> SHADED_GARDEN = garden("shaded_garden", () -> BlockRegistry.shadedgarden);
-	public static final FeatureHolder<?, ?> SOGGY_GARDEN = garden("soggy_garden", () -> BlockRegistry.soggygarden);
+	public static final FeatureHolder<?, ?> ARID_GARDEN = garden("arid_garden", BlockRegistry.aridgarden);
+	public static final FeatureHolder<?, ?> FROST_GARDEN = garden("frost_garden", BlockRegistry.frostgarden);
+	public static final FeatureHolder<?, ?> TROPICAL_GARDEN = garden("tropical_garden", BlockRegistry.tropicalgarden);
+	public static final FeatureHolder<?, ?> WINDY_GARDEN = garden("windy_garden", BlockRegistry.windygarden);
+	public static final FeatureHolder<?, ?> SHADED_GARDEN = garden("shaded_garden", BlockRegistry.shadedgarden);
+	public static final FeatureHolder<?, ?> SOGGY_GARDEN = garden("soggy_garden", BlockRegistry.soggygarden);
 
 	private static FeatureHolder<Feature<RandomPatchConfiguration>, RandomPatchConfiguration> garden(String key, Supplier<Block> block) {
 		return holder(key,
