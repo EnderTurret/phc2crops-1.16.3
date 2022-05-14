@@ -15,9 +15,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraftforge.event.RegistryEvent;
 
 import pam.pamhc2crops.Pamhc2crops;
+import pam.pamhc2crops.config.ChanceConfig;
 import pam.pamhc2crops.config.ClusterConfig;
 import pam.pamhc2crops.util.FeatureHolder;
 
@@ -47,7 +49,7 @@ public class WorldGenRegistry {
 	private static <T extends Feature<C>, C extends FeatureConfiguration> FeatureHolder<T, C> holder(String key, Supplier<T> feature, Supplier<C> config) {
 		final FeatureHolder<T, C> holder = new FeatureHolder<>(Pamhc2crops.getId(key),
 				feature, config,
-				() -> List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+				() -> List.of(RarityFilter.onAverageOnceEvery(ChanceConfig.garden_chance.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		HOLDERS.add(holder);
 		return holder;
 	}

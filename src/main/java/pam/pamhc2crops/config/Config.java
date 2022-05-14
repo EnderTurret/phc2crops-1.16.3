@@ -6,7 +6,6 @@ import com.electronwill.nightconfig.core.io.WritingMode;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber
 public class Config {
 
 	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
