@@ -1,10 +1,5 @@
 package pam.pamhc2crops.init;
 
-import javax.annotation.Nullable;
-
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
@@ -113,12 +108,5 @@ public class BlockRegistry {
 
 	private static Block.Properties garden() {
 		return Block.Properties.of(Material.PLANT).noCollission().strength(0).sound(SoundType.GRASS);
-	}
-
-	private static <T extends Block> T register(String name, T block, @Nullable BlockItem item) {
-		ResourceLocation id = Pamhc2crops.getId(name);
-		block.setRegistryName(id);
-		ForgeRegistries.BLOCKS.register(block);
-		return block;
 	}
 }
