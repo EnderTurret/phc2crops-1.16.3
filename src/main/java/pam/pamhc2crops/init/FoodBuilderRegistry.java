@@ -90,6 +90,4 @@ public class FoodBuilderRegistry {
 	public static final FoodProperties ROASTEDMUSHROOMITEM = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).build();
 	public static final FoodProperties HOTTEAITEM = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).build();
 	public static final FoodProperties HOTCOFFEEITEM = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).build();
-
-
 }

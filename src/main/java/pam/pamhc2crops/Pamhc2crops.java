@@ -38,7 +38,7 @@ public class Pamhc2crops {
 	public static final CreativeModeTab ITEM_GROUP = new CreativeModeTab("pamhc2crops") {
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(ItemRegistry.barleyitem);
+			return new ItemStack(ItemRegistry.barleyitem.get());
 		}
 	};
 
@@ -49,7 +49,7 @@ public class Pamhc2crops {
 		final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modBus.addListener(Pamhc2crops::commonSetup);
 		BlockRegistry.REGISTRY.register(modBus);
-		modBus.addGenericListener(Item.class, ItemRegistry::registerAll);
+		ItemRegistry.REGISTRY.register(modBus);
 
 		modBus.addGenericListener(Feature.class, WorldGenRegistry::registerFeatures);
 
