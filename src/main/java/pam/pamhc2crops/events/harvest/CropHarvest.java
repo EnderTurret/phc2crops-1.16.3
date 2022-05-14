@@ -56,7 +56,6 @@ public class CropHarvest {
 	@SubscribeEvent
 	public void onCropHarvest(RightClickBlock event) {
 		if (event.getPlayer().getMainHandItem().getItem() != Items.BONE_MEAL) {
-			List<ItemStack> drops;
 			BlockState state = event.getWorld().getBlockState(event.getPos());
 			if (state.getBlock() instanceof CropBlock crop) {
 				if (!event.getPlayer().getMainHandItem().isEmpty())
@@ -64,7 +63,7 @@ public class CropHarvest {
 
 				if (crop.isMaxAge(state)) {
 					if (!event.getWorld().isClientSide) {
-						drops = Block.getDrops(state,
+						List<ItemStack> drops = Block.getDrops(state,
 								(ServerLevel) event.getWorld(), event.getPos(),
 								event.getWorld().getBlockEntity(event.getPos()));
 
@@ -77,14 +76,17 @@ public class CropHarvest {
 										event.getPos().getY(), event.getPos().getZ(), stack));
 						}
 
+						// TODO: What is the purpose of this loop?
+						// Wouldn't the remove() call cause an IOOBE?
 						for (int i = 0; i < drops.size(); i++) {
-							if (drops.stream().distinct().limit(3).count() <= 1 || crop == Blocks.POTATOES
-									|| crop == Blocks.CARROTS) {
+							if (crop == Blocks.POTATOES || crop == Blocks.CARROTS ||
+									drops.stream().distinct().limit(3).count() <= 1) {
 
 								event.getWorld()
 								.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
 										event.getPos().getY(), event.getPos().getZ(),
 										drops.get(i)));
+
 								drops.remove(0);
 							}
 
@@ -100,32 +102,32 @@ public class CropHarvest {
 				}
 			}
 
-			if (RightClickConfig.crop_right_click.get())
-				if (state.getBlock() instanceof NetherWartBlock nether) {
-					if (!event.getPlayer().getMainHandItem().isEmpty())
-						event.setCanceled(true);
+			if (state.getBlock() instanceof NetherWartBlock nether) {
+				if (!event.getPlayer().getMainHandItem().isEmpty())
+					event.setCanceled(true);
 
-					if (state.getValue(NetherWartBlock.AGE) == 3) {
-						if (!event.getWorld().isClientSide) {
-							drops = Block.getDrops(state,
-									(ServerLevel) event.getWorld(), event.getPos(),
-									event.getWorld().getBlockEntity(event.getPos()));
+				if (state.getValue(NetherWartBlock.AGE) == 3) {
+					if (!event.getWorld().isClientSide) {
+						List<ItemStack> drops = Block.getDrops(state,
+								(ServerLevel) event.getWorld(), event.getPos(),
+								event.getWorld().getBlockEntity(event.getPos()));
 
-							for (ItemStack stack : drops) {
-								event.getWorld()
-								.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
-										event.getPos().getY(), event.getPos().getZ(), stack));
-							}
-
-							event.getPlayer().causeFoodExhaustion(.05F);
-							event.getWorld().playSound(null, event.getPos(),
-									SoundEvents.NETHER_WART_BREAK, SoundSource.BLOCKS, 1.0F,
-									0.8F + event.getWorld().random.nextFloat() * 0.4F);
-							event.getWorld().setBlock(event.getPos(), nether.defaultBlockState(), 2);
+						for (ItemStack stack : drops) {
+							event.getWorld()
+							.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
+									event.getPos().getY(), event.getPos().getZ(), stack));
 						}
-						event.getPlayer().swing(InteractionHand.MAIN_HAND);
+
+						event.getPlayer().causeFoodExhaustion(.05F);
+						event.getWorld().playSound(null, event.getPos(),
+								SoundEvents.NETHER_WART_BREAK, SoundSource.BLOCKS, 1.0F,
+								0.8F + event.getWorld().random.nextFloat() * 0.4F);
+						event.getWorld().setBlock(event.getPos(), nether.defaultBlockState(), 2);
 					}
+
+					event.getPlayer().swing(InteractionHand.MAIN_HAND);
 				}
+			}
 		}
 	}
 }
