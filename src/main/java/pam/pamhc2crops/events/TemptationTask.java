@@ -8,6 +8,7 @@ import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -16,7 +17,7 @@ import pam.pamhc2crops.init.ItemRegistry;
 
 public class TemptationTask {
 
-	private static final Ingredient Chicken = Ingredient.of(
+	private static final Lazy<Ingredient> Chicken = Lazy.of(() -> Ingredient.of(
 			ItemRegistry.agaveseeditem.get(),
 			ItemRegistry.amaranthseeditem.get(),
 			ItemRegistry.arrowrootseeditem.get(),
@@ -96,10 +97,10 @@ public class TemptationTask {
 			ItemRegistry.whitemushroomseeditem.get(),
 			ItemRegistry.wintersquashseeditem.get(),
 			ItemRegistry.zucchiniseeditem.get()
-			);
+			));
 
 
-	private static final Ingredient Grain = Ingredient.of(
+	private static final Lazy<Ingredient> Grain = Lazy.of(() -> Ingredient.of(
 			ItemRegistry.amaranthitem.get(),
 			ItemRegistry.barleyitem.get(),
 			ItemRegistry.beanitem.get(),
@@ -112,9 +113,9 @@ public class TemptationTask {
 			ItemRegistry.riceitem.get(),
 			ItemRegistry.ryeitem.get(),
 			ItemRegistry.soybeanitem.get()
-			);
+			));
 
-	private static final Ingredient Pig = Ingredient.of(
+	private static final Lazy<Ingredient> Pig = Lazy.of(() -> Ingredient.of(
 			ItemRegistry.arrowrootitem.get(),
 			ItemRegistry.artichokeitem.get(),
 			ItemRegistry.asparagusitem.get(),
@@ -152,9 +153,9 @@ public class TemptationTask {
 			ItemRegistry.waterchestnutitem.get(),
 			ItemRegistry.wintersquashitem.get(),
 			ItemRegistry.zucchiniitem.get()
-			);
+			));
 
-	private static final Ingredient Rabbit = Ingredient.of(
+	private static final Lazy<Ingredient> Rabbit = Lazy.of(() -> Ingredient.of(
 			ItemRegistry.blackberryitem.get(),
 			ItemRegistry.blueberryitem.get(),
 			ItemRegistry.cactusfruititem.get(),
@@ -174,25 +175,25 @@ public class TemptationTask {
 			ItemRegistry.spiceleafitem.get(),
 			ItemRegistry.strawberryitem.get(),
 			Items.SWEET_BERRIES
-			);
+			));
 
 	@SubscribeEvent
 	public void onEntitySpawn(EntityJoinWorldEvent event) {
 		Entity entity = event.getEntity();
 
 		if (entity instanceof Chicken chicken)
-			chicken.goalSelector.addGoal(3, new MoreTemptation(chicken, 1.0D, false, Chicken));
+			chicken.goalSelector.addGoal(3, new MoreTemptation(chicken, 1.0D, false, Chicken.get()));
 
 		if (entity instanceof Cow cow)
-			cow.goalSelector.addGoal(3, new MoreTemptation(cow, 1.25D, false, Grain));
+			cow.goalSelector.addGoal(3, new MoreTemptation(cow, 1.25D, false, Grain.get()));
 
 		if (entity instanceof Sheep sheep)
-			sheep.goalSelector.addGoal(3, new MoreTemptation(sheep, 1.0D, false, Grain));
+			sheep.goalSelector.addGoal(3, new MoreTemptation(sheep, 1.0D, false, Grain.get()));
 
 		if (entity instanceof Pig pig)
-			pig.goalSelector.addGoal(4, new MoreTemptation(pig, 1.2D, false, Pig));
+			pig.goalSelector.addGoal(4, new MoreTemptation(pig, 1.2D, false, Pig.get()));
 
 		if (entity instanceof Rabbit rabbit)
-			rabbit.goalSelector.addGoal(4, new MoreTemptation(rabbit, 1.2D, false, Rabbit));
+			rabbit.goalSelector.addGoal(4, new MoreTemptation(rabbit, 1.2D, false, Rabbit.get()));
 	}
 }
