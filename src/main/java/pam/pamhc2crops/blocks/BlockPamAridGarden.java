@@ -11,7 +11,7 @@ import net.minecraft.world.level.BlockGetter;
 
 public class BlockPamAridGarden extends BushBlock {
 
-	public BlockPamAridGarden(Block.Properties properties, String name) {
+	public BlockPamAridGarden(Block.Properties properties) {
 		super(properties);
 	}
 

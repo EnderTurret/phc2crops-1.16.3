@@ -6,8 +6,6 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.BlockPos;
@@ -15,11 +13,8 @@ import net.minecraft.world.level.BlockGetter;
 
 public class BlockPamCrop extends CropBlock {
 
-	public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
-
-	public BlockPamCrop(Block.Properties builder, String name) {
+	public BlockPamCrop(Block.Properties builder) {
 		super(builder);
-		this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
 	}
 
 	@Override

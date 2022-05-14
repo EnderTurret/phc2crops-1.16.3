@@ -14,7 +14,7 @@ public class BlockPamGarden extends BushBlock {
 
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
-	public BlockPamGarden(Block.Properties properties, String name) {
+	public BlockPamGarden(Block.Properties properties) {
 		super(properties);
 	}
 
