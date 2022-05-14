@@ -17,19 +17,9 @@ public class DimensionConfig {
 
 	public static void init(ForgeConfigSpec.Builder config) {
 		whitelist = config.comment("Enter a dimension id to whitelist feature generation").defineList("white_dim",
-				Arrays.asList("minecraft:overworld"), new Predicate<Object>() {
-					@Override
-					public boolean apply(@Nullable Object val) {
-						return val instanceof String && ResourceLocation.tryParse((String)val) != null;
-					}
-				});
+				Arrays.asList("minecraft:overworld"), val -> val instanceof String string && ResourceLocation.tryParse(string) != null);
 
 		blacklist = config.comment("Enter a dimension id to blacklist feature generation").defineList("black_dim",
-				Arrays.asList("minecraft:the_end", "minecraft:the_nether"), new Predicate<Object>() {
-					@Override
-					public boolean apply(@Nullable Object val) {
-						return val instanceof String && ResourceLocation.tryParse((String)val) != null;
-					}
-				});
+				Arrays.asList("minecraft:the_end", "minecraft:the_nether"), val -> val instanceof String string && ResourceLocation.tryParse(string) != null);
 	}
 }

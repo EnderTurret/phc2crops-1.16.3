@@ -20,9 +20,8 @@ public class ItemPamGrain extends ItemNameBlockItem {
 
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-		if (this.allowdedIn(group)) {
+		if (this.allowdedIn(group))
 			items.add(new ItemStack(this));
-		}
 	}
 
 	@Override
@@ -32,27 +31,25 @@ public class ItemPamGrain extends ItemNameBlockItem {
 		ItemStack stack = player.getItemInHand(hand);
 
 		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgeableMob && ((AgeableMob) entity).getAge() == 0) {
-			if (entity instanceof Cow) {
-				if (((Cow) entity).isInLove()) {
+			if (entity instanceof Cow)
+				if (((Cow) entity).isInLove())
 					return InteractionResult.FAIL;
-				} else {
+				else {
 					((Cow) entity).setInLove(player);
 					if (!player.isCreative())
 						stack.shrink(1);
 					return InteractionResult.PASS;
 				}
-			}
 
-			if (entity instanceof Sheep) {
-				if (((Sheep) entity).isInLove()) {
+			if (entity instanceof Sheep)
+				if (((Sheep) entity).isInLove())
 					return InteractionResult.FAIL;
-				} else {
+				else {
 					((Sheep) entity).setInLove(player);
 					if (!player.isCreative())
 						stack.shrink(1);
 					return InteractionResult.PASS;
 				}
-			}
 		}
 
 		if (entity.isBaby()) {

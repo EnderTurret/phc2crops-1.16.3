@@ -67,16 +67,15 @@ public class CropHarvest {
 
 						Item seed = getCropSeed(crop).asItem();
 
-						for (ItemStack stack : drops) {
+						for (ItemStack stack : drops)
 							if (stack.getItem() != seed)
 								event.getWorld()
 								.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
 										event.getPos().getY(), event.getPos().getZ(), stack));
-						}
 
 						// TODO: What is the purpose of this loop?
 						// Wouldn't the remove() call cause an IOOBE?
-						for (int i = 0; i < drops.size(); i++) {
+						for (int i = 0; i < drops.size(); i++)
 							if (crop == Blocks.POTATOES || crop == Blocks.CARROTS ||
 									drops.stream().distinct().limit(3).count() <= 1) {
 
@@ -87,8 +86,6 @@ public class CropHarvest {
 
 								drops.remove(0);
 							}
-
-						}
 
 						event.getPlayer().causeFoodExhaustion(.05F);
 						event.getWorld().playSound(null, event.getPos(), SoundEvents.CROP_BREAK,
@@ -110,11 +107,10 @@ public class CropHarvest {
 								(ServerLevel) event.getWorld(), event.getPos(),
 								event.getWorld().getBlockEntity(event.getPos()));
 
-						for (ItemStack stack : drops) {
+						for (ItemStack stack : drops)
 							event.getWorld()
 							.addFreshEntity(new ItemEntity(event.getWorld(), event.getPos().getX(),
 									event.getPos().getY(), event.getPos().getZ(), stack));
-						}
 
 						event.getPlayer().causeFoodExhaustion(.05F);
 						event.getWorld().playSound(null, event.getPos(),

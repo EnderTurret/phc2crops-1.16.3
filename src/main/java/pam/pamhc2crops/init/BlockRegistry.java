@@ -115,11 +115,6 @@ public class BlockRegistry {
 		return Block.Properties.of(Material.PLANT).noCollission().strength(0).sound(SoundType.GRASS);
 	}
 
-	private static <T extends Block> T register(String name, T block) {
-		BlockItem item = new BlockItem(block, new Item.Properties().tab(Pamhc2crops.ITEM_GROUP));
-		return register(name, block, item);
-	}
-
 	private static <T extends Block> T register(String name, T block, @Nullable BlockItem item) {
 		ResourceLocation id = Pamhc2crops.getId(name);
 		block.setRegistryName(id);

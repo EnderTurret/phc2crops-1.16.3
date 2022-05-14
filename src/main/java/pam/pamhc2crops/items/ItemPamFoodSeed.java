@@ -14,9 +14,8 @@ public class ItemPamFoodSeed extends ItemNameBlockItem {
 
 	@Override
 	public void fillItemCategory(CreativeModeTab group, NonNullList<ItemStack> items) {
-		if (this.allowdedIn(group)) {
+		if (this.allowdedIn(group))
 			items.add(new ItemStack(this));
-		}
 
 	}
 
