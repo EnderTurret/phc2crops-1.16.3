@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
 public class ItemPamPig extends ItemNameBlockItem {
+
 	public ItemPamPig(Block blockIn, Properties properties) {
 		super(blockIn, properties);
 	}
@@ -29,23 +30,24 @@ public class ItemPamPig extends ItemNameBlockItem {
 
 		ItemStack stack = player.getItemInHand(hand);
 
-		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgeableMob && ((AgeableMob) entity).getAge() == 0)
-			if (entity instanceof Pig)
-				if (((Pig) entity).isInLove())
-					return InteractionResult.FAIL;
-				else {
-					((Pig) entity).setInLove(player);
-					if (!player.isCreative())
-						stack.shrink(1);
-					return InteractionResult.PASS;
-				}
+		if (entity instanceof AgeableMob ageable) {
+			if (!entity.level.isClientSide && !entity.isBaby() && ageable.getAge() == 0)
+				if (entity instanceof Pig pig)
+					if (pig.isInLove())
+						return InteractionResult.FAIL;
+					else {
+						pig.setInLove(player);
+						if (!player.isCreative())
+							stack.shrink(1);
+						return InteractionResult.PASS;
+					}
 
-		if (entity.isBaby()) {
-			if (!player.isCreative())
-				stack.shrink(1);
-			((AgeableMob) entity).ageUp((int) (-((AgeableMob) entity).getAge() / 20 * 0.1F),
-					true);
-			return InteractionResult.PASS;
+			if (entity.isBaby()) {
+				if (!player.isCreative())
+					stack.shrink(1);
+				ageable.ageUp((int) (-ageable.getAge() / 20 * 0.1F), true);
+				return InteractionResult.PASS;
+			}
 		}
 
 		return InteractionResult.FAIL;

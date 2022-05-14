@@ -31,35 +31,36 @@ public class ItemPamSeed extends ItemNameBlockItem {
 
 		ItemStack stack = player.getItemInHand(hand);
 
-		if (!entity.level.isClientSide && !entity.isBaby() && entity instanceof AgeableMob && ((AgeableMob) entity).getAge() == 0) {
-			if (entity instanceof Chicken)
-				if (((Chicken) entity).isInLove())
-					return InteractionResult.FAIL;
-				else {
-					((Chicken) entity).setInLove(player);
+		if (entity instanceof AgeableMob ageable) {
+			if (!entity.level.isClientSide && !entity.isBaby() && ageable.getAge() == 0) {
+				if (entity instanceof Chicken chicken)
+					if (chicken.isInLove())
+						return InteractionResult.FAIL;
+					else {
+						chicken.setInLove(player);
+						if (!player.isCreative())
+							stack.shrink(1);
+						return InteractionResult.PASS;
+					}
+
+				if (entity instanceof Parrot parrot) {
+					if (!parrot.isTame())
+						if (Math.random() <= 0.33) {
+							parrot.tame(player);
+							parrot.setInLove(player);
+						}
 					if (!player.isCreative())
 						stack.shrink(1);
 					return InteractionResult.PASS;
 				}
+			}
 
-			if (entity instanceof Parrot)
-				if (!entity.level.isClientSide) {
-					if (!((Parrot) entity).isTame())
-						if (Math.random() <= 0.33) {
-							((Parrot) entity).tame(player);
-							((Parrot) entity).setInLove(player);
-						}
-					if (!player.isCreative())
-						stack.shrink(1);
-				}
-		}
-
-		if (entity.isBaby()) {
-			if (!player.isCreative())
-				stack.shrink(1);
-			((AgeableMob) entity).ageUp((int) (-((AgeableMob) entity).getAge() / 20 * 0.1F),
-					true);
-			return InteractionResult.PASS;
+			if (entity.isBaby()) {
+				if (!player.isCreative())
+					stack.shrink(1);
+				ageable.ageUp((int) (-ageable.getAge() / 20 * 0.1F), true);
+				return InteractionResult.PASS;
+			}
 		}
 		return InteractionResult.FAIL;
 	}
