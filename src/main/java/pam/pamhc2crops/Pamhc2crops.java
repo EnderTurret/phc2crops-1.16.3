@@ -49,8 +49,6 @@ public class Pamhc2crops {
 		BlockRegistry.REGISTRY.register(modBus);
 		ItemRegistry.REGISTRY.register(modBus);
 
-		modBus.addGenericListener(Feature.class, WorldGenRegistry::registerFeatures);
-
 		MinecraftForge.EVENT_BUS.addListener(GardenGeneration::addFeaturesToBiomes);
 
 		DistExecutor.safeRunForDist(() -> SideProxy.Client::new, () -> SideProxy.Server::new);
