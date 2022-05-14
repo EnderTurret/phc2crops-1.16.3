@@ -52,6 +52,11 @@ public class WorldGenRegistry {
 		return holder;
 	}
 
+	public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
+		for (FeatureHolder<?, ?> holder : HOLDERS)
+			holder.registerFeature();
+	}
+
 	public static void registerConfiguredFeatures() {
 		for (FeatureHolder<?, ?> holder : HOLDERS)
 			holder.registerConfiguredFeature();

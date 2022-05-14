@@ -49,6 +49,8 @@ public class Pamhc2crops {
 		BlockRegistry.REGISTRY.register(modBus);
 		ItemRegistry.REGISTRY.register(modBus);
 
+		modBus.addGenericListener(Feature.class, WorldGenRegistry::registerFeatures);
+
 		MinecraftForge.EVENT_BUS.addListener(GardenGeneration::addFeaturesToBiomes);
 
 		DistExecutor.safeRunForDist(() -> SideProxy.Client::new, () -> SideProxy.Server::new);
@@ -58,9 +60,13 @@ public class Pamhc2crops {
 		EventSetup.setupEvents();
 
 		event.enqueueWork(() -> {
-			WorldGenRegistry.registerConfiguredFeatures();
-			WorldGenRegistry.registerPlacedFeatures();
-			CompostRegistry.register();
+			try {
+				WorldGenRegistry.registerConfiguredFeatures();
+				WorldGenRegistry.registerPlacedFeatures();
+				CompostRegistry.register();
+			} catch (Exception e) {
+				LOGGER.error("Exception in common setup:", e);
+			}
 		});
 	}
 
