@@ -9,6 +9,6 @@ public class ClusterConfig {
 	public static void init(ForgeConfigSpec.Builder config) {
 		garden_cluster_amount = config.comment(
 				"Amount of gardens that spawn together. Higher numbers indicate larger clusters; 32 is about 3-7ish (Default: 32)")
-				.defineInRange("Probability of gardens generating", 32, 1, 1000000000);
+				.defineInRange("Probability of gardens generating", 32, 1, Integer.MAX_VALUE);
 	}
 }
