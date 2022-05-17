@@ -8,39 +8,36 @@ import net.minecraftforge.fml.common.Mod;
 
 public class Config {
 
-	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 	public static final ForgeConfigSpec CONFIG;
 
 	static {
-		BUILDER.push("Tweak Garden World Generation Rates");
-		ChanceConfig.init(BUILDER);
-		BUILDER.pop();
+		ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
 
-		BUILDER.push("Tweak Garden Cluster Rates");
-		ChanceConfig.init(BUILDER);
-		BUILDER.pop();
+		builder.push("Tweak Garden World Generation Rates");
+		ChanceConfig.init(builder);
+		builder.pop();
 
-		BUILDER.push("Tweak Garden Cluster Sizes");
-		ClusterConfig.init(BUILDER);
-		BUILDER.pop();
+		builder.push("Tweak Garden Cluster Rates");
+		ChanceConfig.init(builder);
+		builder.pop();
 
-		BUILDER.push("Miscellaneous Features");
-		FeatureConfig.init(BUILDER);
-		BUILDER.pop();
+		builder.push("Tweak Garden Cluster Sizes");
+		ClusterConfig.init(builder);
+		builder.pop();
 
-		BUILDER.push("Enable/Disable Garden World Generation");
-		EnableConfig.init(BUILDER);
-		BUILDER.pop();
+		builder.push("Miscellaneous Features");
+		FeatureConfig.init(builder);
+		builder.pop();
 
-		BUILDER.push("Right-click Harvesting Settings");
-		RightClickConfig.init(BUILDER);
-		BUILDER.pop();
+		builder.push("Enable/Disable Garden World Generation");
+		EnableConfig.init(builder);
+		builder.pop();
 
-		BUILDER.push("Dimensions Settings");
-		DimensionConfig.init(BUILDER);
-		BUILDER.pop();
+		builder.push("Dimensions Settings");
+		DimensionConfig.init(builder);
+		builder.pop();
 
-		CONFIG = BUILDER.build();
+		CONFIG = builder.build();
 	}
 
 	public static void loadConfig(ForgeConfigSpec config, String path) {
