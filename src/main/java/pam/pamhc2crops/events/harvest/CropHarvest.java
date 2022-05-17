@@ -27,7 +27,6 @@ import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 
 import pam.pamhc2crops.Pamhc2crops;
 import pam.pamhc2crops.config.FeatureConfig;
-import pam.pamhc2crops.config.RightClickConfig;
 
 public class CropHarvest {
 
@@ -55,7 +54,7 @@ public class CropHarvest {
 
 	@SubscribeEvent
 	public void onCropHarvest(RightClickBlock event) {
-		if (!FeatureConfig.rightclick_harvest.get() || !RightClickConfig.crop_right_click.get())
+		if (!FeatureConfig.rightclick_harvest.get())
 			return;
 
 		if (event.getPlayer().getMainHandItem().getItem() != Items.BONE_MEAL) {

@@ -3,7 +3,6 @@ package pam.pamhc2crops.events;
 import net.minecraftforge.common.MinecraftForge;
 
 import pam.pamhc2crops.config.FeatureConfig;
-import pam.pamhc2crops.config.RightClickConfig;
 import pam.pamhc2crops.events.harvest.CropHarvest;
 
 public class EventSetup {
