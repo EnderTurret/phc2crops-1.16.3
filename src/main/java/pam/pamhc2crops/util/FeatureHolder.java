@@ -13,8 +13,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import pam.pamhc2crops.Pamhc2crops;
-
 public class FeatureHolder<T extends Feature<C>, C extends FeatureConfiguration> {
 
 	private final ResourceLocation key;
