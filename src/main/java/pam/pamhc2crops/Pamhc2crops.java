@@ -41,8 +41,8 @@ public class Pamhc2crops {
 	};
 
 	public Pamhc2crops() {
-		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.CONFIG, "pamhc2crops.toml");
-		Config.loadConfig(Config.CONFIG, FMLPaths.CONFIGDIR.get().resolve("pamhc2crops.toml").toString());
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.CONFIG, "pamhc2crops.toml");
+		//Config.loadConfig(Config.CONFIG, FMLPaths.CONFIGDIR.get().resolve("pamhc2crops.toml").toString());
 
 		final IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modBus.addListener(Pamhc2crops::commonSetup);

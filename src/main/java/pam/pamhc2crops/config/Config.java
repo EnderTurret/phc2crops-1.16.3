@@ -40,10 +40,10 @@ public class Config {
 		CONFIG = builder.build();
 	}
 
-	public static void loadConfig(ForgeConfigSpec config, String path) {
+	/*public static void loadConfig(ForgeConfigSpec config, String path) {
 		CommentedFileConfig file = CommentedFileConfig.builder(path).sync().autosave().writingMode(WritingMode.REPLACE)
 				.build();
 		file.load();
 		config.setConfig(file);
-	}
+	}*/
 }
