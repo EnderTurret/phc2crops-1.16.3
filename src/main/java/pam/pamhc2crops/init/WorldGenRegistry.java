@@ -47,7 +47,7 @@ public class WorldGenRegistry {
 	}
 
 	private static <T extends Feature<C>, C extends FeatureConfiguration> FeatureHolder<T, C> holder(String key, Supplier<T> feature, Supplier<C> config) {
-		final FeatureHolder<T, C> holder = new FeatureHolder<>(Pamhc2crops.getId(key),
+		FeatureHolder<T, C> holder = new FeatureHolder<>(Pamhc2crops.getId(key),
 				feature, config,
 				() -> List.of(RarityFilter.onAverageOnceEvery(ChanceConfig.garden_chance.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		HOLDERS.add(holder);
